@@ -1,0 +1,76 @@
+SQL Database:
+
+Criação de Tabelas:
+
+Create table cliente(
+	id_cliente int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nome_cliente varchar(20) NOT NULL,
+    email_cliente varchar(20) NOT NULL,
+    password_cliente varchar(20) NOT NULL
+)
+
+
+Create table administrador(
+	id_administrador int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nome_administrador varchar(20) NOT NULL,
+    email_administrador varchar(20) NOT NULL,
+    password_administrador varchar(20) NOT NULL
+)
+
+Create table eventos(
+	id_evento int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nome_evento varchar(20) NOT NULL,
+    imagem_evento varchar(20) NOT NULL,
+    requisito_evento varchar(100) NOT NULL,
+    descricao_evento varchar(200) NOT NULL,
+    id_administrador_fk int NOT NULL,
+    Foreign Key(id_administrador_fk) REFERENCES administrador(id_administrador)
+)
+
+Create table mensagem(
+	id_mensagem int Primary Key AUTO_INCREMENT NOT NULL,
+    mensagem varchar(1000) NOT NULL,
+    id_evento_fk int NOT NULL,
+    id_cliente_fk int NOT NULL,
+    id_administrador_fk int NOT NULL,
+    Foreign Key(id_evento_fk) REFERENCES eventos(id_evento),
+    Foreign Key(id_cliente_fk) REFERENCES cliente(id_cliente),
+    Foreign Key(id_administrador_fk) REFERENCES administrador(id_administrador)
+)
+
+Create table cliente_inscreve_evento(
+	id_cliente_inscreve_evento int Primary Key AUTO_INCREMENT NOT NULL,
+    id_cliente_fk int NOT NULL,
+    id_evento_fk int NOT NULL,
+    Foreign Key(id_cliente_fk) REFERENCES cliente(id_cliente),
+    Foreign Key(id_evento_fk) REFERENCES eventos(id_evento)
+)
+
+Inserção de Dados:
+
+Insert into cliente(nome_cliente, email_cliente, password_cliente) VALUES("nitekx gomes", "nitekxgomes@gmail.com", "1234")
+
+Insert into cliente(nome_cliente, email_cliente, password_cliente) VALUES("ze manel", "zemanel@gmail.com", "1234")
+
+Insert into administrador(nome_administrador, email_administrador, password_administrador) VALUES("Vasco Gomes", "vascogomes@gmail.com", "1234")
+
+Insert into eventos(nome_evento, imagem_evento, requisito_evento, descricao_evento, id_administrador_fk) VALUES("Passeio Todo-o-Terreno UMM", "Imagem Passeio", "Requisito 1, REquisito 2", "Uma Bela Descrição Blah Blah Blah", 1)
+
+Insert into mensagem(mensagem, id_evento_fk, id_cliente_fk, id_administrador_fk) VALUES("GANDA MENSAGEM BUÈ FIXE", 1, 1, 1)
+
+Insert into mensagem(mensagem, id_evento_fk, id_cliente_fk, id_administrador_fk) VALUES("Mensagem 2", 1, 2, 1)
+
+Insert into cliente_inscreve_evento(id_cliente_fk, id_evento_fk) VALUES(1, 1)
+
+Insert into cliente_inscreve_evento(id_cliente_fk, id_evento_fk) VALUES(2, 1)
+
+Consultas á Base de Dados:
+
+Mostrar nomes de clientes inscritos num determinado evento:
+Select nome_cliente From cliente, eventos, cliente_inscreve_evento Where eventos.id_evento = 1
+
+Mostrar as mensagens de um determinado evento:
+Select mensagem From mensagem, eventos Where mensagem.id_evento_fk = 1
+
+Mostrar as mensagens de um determinado evento entre 2 pessoas:
+Select mensagem From mensagem, eventos, cliente, administrador Where mensagem.id_evento_fk = 1 && mensagem.id_cliente_fk = 1 && administrador.id_administrador = 1
