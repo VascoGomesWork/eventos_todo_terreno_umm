@@ -5,6 +5,7 @@ import Side_Nav from "../Side_Nav";
 import Informacoes_Admin from "./Informacoes_Admin";
 import Footer from "../Footer";
 import Scripts from "../Scripts";
+import "../../style.css"
 
 export default function Dashboard_Admin(){
 
