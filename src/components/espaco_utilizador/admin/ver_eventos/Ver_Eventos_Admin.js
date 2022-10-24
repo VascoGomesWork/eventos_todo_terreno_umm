@@ -6,7 +6,7 @@ import Tabela_Eventos_Disponiveis from "../Tabela_Eventos_Disponiveis";
 import Footer from "../Footer";
 import Scripts from "../Scripts";
 
-export default function Ver_Eventos(){
+export default function Ver_Eventos_Admin(){
 
     return(
         <div>
