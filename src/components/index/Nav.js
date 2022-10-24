@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "react-router-dom";
 
 export default function Nav(){
     
@@ -13,7 +14,7 @@ export default function Nav(){
                         <li class="nav-item"><a class="nav-link" href="#services">Serviços</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Eventos Todo o Terreno</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">Sobre Nós</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../../Espaco_Utilizador_2/startbootstrap-sb-admin-gh-pages/login.html">Espaço do Utilizador</a></li>
+                        <li class="nav-item"><Link to={"/Dashboard_Cliente"} class="navbar-brand" ><a class="nav-link">Espaço do Utilizador</a></Link></li>
                     </ul>
                 </div>
             </div>
