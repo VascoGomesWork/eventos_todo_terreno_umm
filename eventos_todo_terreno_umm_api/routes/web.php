@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('/eventos/', [\App\Http\Controllers\Eventos::class, 'index']);
+//Route::get('/eventos/', [\App\Http\Controllers\EventosController::class, 'index']);
