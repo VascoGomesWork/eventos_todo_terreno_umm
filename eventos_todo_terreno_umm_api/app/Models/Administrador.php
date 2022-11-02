@@ -8,10 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Administrador extends Model
 {
     use HasFactory;
+
+    protected $table = "administrador";
+
+    protected $fillable = [
+        "nome_administrador",
+        "email_administrador",
+        "password_administrator",
+    ];
+
     public function index(){
-        $this->query('SELECT * FROM administrador');
+        /*$this->query('SELECT * FROM administrador');
         $rows = $this->resultSet();
-        return $rows;
+        return $rows;*/
     }
 
     public function store(){

@@ -33,9 +33,10 @@ Route::get('/clienteinscreveevento/{post}', [\App\Http\Controllers\ClienteInscre
 
 //EventosController
 Route::get('/eventos/', [\App\Http\Controllers\EventosController::class, 'index']);
+Route::get('/eventos/{id}', [\App\Http\Controllers\EventosController::class, 'eventosById']);
 Route::post('/eventos/store', [\App\Http\Controllers\EventosController::class, 'store']);
 Route::get('/eventos/{post}', [\App\Http\Controllers\EventosController::class, 'show']);
-Route::get('/eventos/{post}/edit', [\App\Http\Controllers\EventosController::class, 'edit']);
+Route::put('/eventos/{evento}', [\App\Http\Controllers\EventosController::class, 'edit']);
 Route::get('/eventos/{post}', [\App\Http\Controllers\EventosController::class, 'destroy']);
 
 //MensagemController

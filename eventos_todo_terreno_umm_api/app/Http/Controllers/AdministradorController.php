@@ -11,8 +11,9 @@ class AdministradorController extends Controller
 
     public function index(){
         $administrador = new Administrador();
-        echo 'Teste' . $administrador->index();
-        return ["name"=>"Vasco", "administrador"=>$administrador->index()];
+
+        //How to Read Data From DataBase -> https://youtu.be/bU1nVHSmGhk?list=PLYVcyg3AF-zvDDXBLDyn9UJSgAYMWpUS3
+        return ["administrador"=>$administrador::all()];
     }
 
 
