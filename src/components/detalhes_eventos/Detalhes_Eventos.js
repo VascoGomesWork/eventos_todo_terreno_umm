@@ -14,15 +14,12 @@ export default function Detalhes_Eventos(){
 
             <Nav />
 
-            <body>
-
             <Evento />
 
             <Footer />
 
             <Scripts />
 
-            </body>
         </div>
 
 )

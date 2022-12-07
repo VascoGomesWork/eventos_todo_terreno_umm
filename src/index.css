@@ -11423,6 +11423,7 @@ header.masthead h1, header.masthead .h1 {
 
 #portfolio .container-fluid, #portfolio .container-sm, #portfolio .container-md, #portfolio .container-lg, #portfolio .container-xl, #portfolio .container-xxl {
   max-width: 1920px;
+  margin-top: 10%;
 }
 #portfolio .container-fluid .portfolio-box, #portfolio .container-sm .portfolio-box, #portfolio .container-md .portfolio-box, #portfolio .container-lg .portfolio-box, #portfolio .container-xl .portfolio-box, #portfolio .container-xxl .portfolio-box {
   position: relative;
@@ -11532,4 +11533,20 @@ body {font-family: Verdana, sans-serif;}
   padding: 5px;
   background: #1abc9c;
   color: white !important
+}
+
+#eventos_row{
+  margin: 2%;
+}
+
+#eventos_texto{
+  text-align: center;
+}
+
+#about{
+  background-color: rgba(0, 120, 51, 0.9);
+}
+
+#passeio_todo_o_terreno{
+  margin-top: 10%;
 }

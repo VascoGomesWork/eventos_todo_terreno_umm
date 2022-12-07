@@ -16,10 +16,6 @@ export default function Index(){
 
         <Nav />
         
-        <Header />
-        
-        <Servicos />
-        
         <Eventos />
         
         <Sobre />

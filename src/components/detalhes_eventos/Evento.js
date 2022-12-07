@@ -7,8 +7,8 @@ export default function Evento(){
 
     return(
     {/*-- Evento--*/},
-    <div class="container mt-5" id="passeio_todo_o_terreno">
-        <div class="row">
+    <div class="container mt-5">
+        <div class="row" id="passeio_todo_o_terreno">
             <div class="col-lg-8">
 
                 <Descricao_Evento />
