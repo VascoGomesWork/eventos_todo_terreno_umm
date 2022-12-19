@@ -7,7 +7,7 @@ export default function evento_Especifico(props){
 
     return[
         <div className="col-lg-4 col-sm-6">
-            <Link to={'./Detalhes_Eventos/'+ props.eventosAtributes.id} class="portfolio-box" title="Project Name">
+            <Link to={'./Detalhes_Eventos/'+props.eventosAtributes.id} class="portfolio-box" title="Project Name">
                 <img className="img-fluid" src="../../img/umm3.jpg" alt="..."/>
                 <div className="portfolio-box-caption">
                     <div className="project-category text-white-50">Passeio Todo-o-Terreno</div>

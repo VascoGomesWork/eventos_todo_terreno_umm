@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "./cliente/Head";
+import {Link} from "react-router-dom";
 
 export default function Registar(){
     return[
@@ -37,12 +38,12 @@ export default function Registar(){
                                                 <div
                                                     className="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                     <a className="small" href="password.html">Forgot Password?</a>
-                                                    <a className="btn btn-primary" href="index.html">Login</a>
+                                                    <a className="btn btn-primary" href="index.html">Efetuar Registo</a>
                                                 </div>
                                             </form>
                                         </div>
                                         <div className="card-footer text-center py-3">
-                                            <div className="small"><a href="register.html">Need an account? Sign up!</a>
+                                            <div className="small"><h5>Já tem conta? Realize o <Link to={'../Login'} class="nav-link" title="Project Name">Login</Link> no Espaço do Utilizador</h5>
                                             </div>
                                         </div>
                                     </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "./cliente/Head";
+import {Link} from "react-router-dom";
 
 export default function Login(){
     return[
@@ -32,12 +33,12 @@ export default function Login(){
                                                 </div>
                                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                     <a class="small" href="password.html">Forgot Password?</a>
-                                                    <a class="btn btn-primary" href="index.html">Login</a>
+                                                    <a class="btn btn-primary" href="index.html">Efetuar Login</a>
                                                 </div>
                                             </form>
                                         </div>
                                         <div class="card-footer text-center py-3">
-                                            <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
+                                            <div class="small"><h5>Ainda não tem conta? Realize o  <Link to={'../Registar'} class="nav-link" title="Project Name">Registo</Link> no Espaço do Utilizador</h5></div>
                                         </div>
                                     </div>
                                 </div>

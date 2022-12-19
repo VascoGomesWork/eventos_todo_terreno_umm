@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 export default function Comentarios_Eventos(){
 
@@ -50,7 +51,7 @@ export default function Comentarios_Eventos(){
                 </div>
             </section>
 
-        <h5>Para se Inscrever no evento, faça login no <button>Espaço do Utilizador</button> com a sua conta</h5>
+        <h5>Para se Inscrever no evento, faça login no <Link to={'../Login'} class="nav-link" title="Project Name">Espaço do Utilizador</Link> com a sua conta</h5>
     </div>
     )
 }
