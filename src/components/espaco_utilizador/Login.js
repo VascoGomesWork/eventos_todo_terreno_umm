@@ -1,8 +1,38 @@
-import React from "react";
+import React, {useState} from "react";
 import Head from "./cliente/Head";
 import {Link} from "react-router-dom";
 
 export default function Login(){
+
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+    function efetuarLogin(){
+
+        console.log("EMAIL = " + email)
+        console.log("PASSWORD = " + password)
+
+        fetch(`http://localhost:8000/api/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8',
+                "Access-Control-Allow-Origin": "*",
+                "Accept": "application/json"
+
+            },
+            body: JSON.stringify({
+                "email": email,
+                "password": password,
+            }), // body data type must match "Content-Type" header
+        }).then((response) => {
+            return response.json();
+        }).then((parsedData) => {
+            console.log("DATA = " + JSON.stringify(parsedData))
+            window.location.href = "/Dashboard_Cliente"
+        })
+
+    }
+
     return[
 
     <div>
@@ -14,26 +44,21 @@ export default function Login(){
                     <main>
                         <div class="container">
                             <div class="row justify-content-center">
-                                <div class="col-lg-5">
+                                <div class="col-lg-10">
                                     <div class="card shadow-lg border-0 rounded-lg mt-5">
                                         <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                         <div class="card-body">
                                             <form>
                                                 <div class="form-floating mb-3">
-                                                    <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
+                                                    <input class="form-control" value={email} onChange={(e) => setEmail(e.target.value)} id="inputEmail" type="email" placeholder="name@example.com" />
                                                     <label for="inputEmail">Email address</label>
                                                 </div>
                                                 <div class="form-floating mb-3">
-                                                    <input class="form-control" id="inputPassword" type="password" placeholder="Password" />
+                                                    <input class="form-control" value={password} onChange={(e) => setPassword(e.target.value)} id="inputPassword" type="password" placeholder="Password" />
                                                     <label for="inputPassword">Password</label>
                                                 </div>
-                                                <div class="form-check mb-3">
-                                                    <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
-                                                    <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
-                                                </div>
                                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                    <a class="small" href="password.html">Forgot Password?</a>
-                                                    <a class="btn btn-primary" href="index.html">Efetuar Login</a>
+                                                    <a class="btn btn-primary" onClick={efetuarLogin}>Efetuar Login</a>
                                                 </div>
                                             </form>
                                         </div>
