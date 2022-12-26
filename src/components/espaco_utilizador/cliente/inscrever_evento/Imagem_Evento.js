@@ -12,7 +12,7 @@ export default function Imagem_evento(){
                     Passeio Todo-o-Terreno
                 </div>
                 <div className="card-body">
-                    <img style="width: 100%;" src="../../Eventos_UMM_Home/startbootstrap-creative-gh-pages/assets/img/UMM/umm1.jpg"/>
+                    <img id="imagem_evento" src="../../Eventos_UMM_Home/startbootstrap-creative-gh-pages/assets/img/UMM/umm1.jpg"/>
                 </div>
             </div>
         </div>

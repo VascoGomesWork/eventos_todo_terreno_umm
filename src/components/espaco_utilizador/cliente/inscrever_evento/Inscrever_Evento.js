@@ -12,67 +12,65 @@ import Footer from "../Footer";
 import Script from "../Script";
 
 
-export default function Inscrever_Cliente(){
+export default function Inscrever_Evento(){
 
     return(
 
-<div>
+        <div>
 
-    <Head />
+            <Head />
 
-    <body class="sb-nav-fixed">
+            <body class="sb-nav-fixed">
 
-        <Nav />
+                <Nav />
 
-    <div id="layoutSidenav">
-        <div id="layoutSidenav_nav">
+            <div id="layoutSidenav">
+                <div id="layoutSidenav_nav">
 
-            <Side_Nav />
-
-        </div>
-        <div id="layoutSidenav_content">
-            <main>
-                <div class="container-fluid px-4">
-                    <h1 class="mt-4">Inscrição em Eventos</h1>
-                    <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">Esta secção é para ser realizada a inscrição nos eventos todo-o-terreno</li>
-                    </ol>
-
-                    <h3>Selecione o evento que pretende participar da tabela seguinte</h3>
-
-                    <Tabela_Eventos_Disponiveis />
-
-                    <div class="row">
-
-                        <Imagem_evento />
-
-                        <Requisitos_Eventos />
-
-                    </div>
-
-
-                    <Localizacao_Evento />
-
-
-                    <Calendario_Evento />
-
-
-                    <Comentarios_Eventos />
-
+                    <Side_Nav />
 
                 </div>
-            </main>
+                <div id="layoutSidenav_content">
+                    <main>
+                        <div class="container-fluid px-4">
+                            <h1 class="mt-4">Inscrição em Eventos</h1>
+                            <ol class="breadcrumb mb-4">
+                                <li class="breadcrumb-item active">Esta secção é para ser realizada a inscrição nos eventos todo-o-terreno</li>
+                            </ol>
 
-            <Footer />
+                            <h3>Selecione o evento que pretende participar da tabela seguinte</h3>
+
+
+                            <div class="row">
+
+                                <Imagem_evento />
+
+                                <Requisitos_Eventos />
+
+                            </div>
+
+                            <Localizacao_Evento />
+
+                            {/* FIX */}
+                            <Calendario_Evento />
+
+
+                            <Comentarios_Eventos />
+
+
+                        </div>
+                    </main>
+
+                    <Footer />
+
+                </div>
+            </div>
+
+            <Script />
+
+            </body>
 
         </div>
-    </div>
-
-    <Script />
-
-    </body>
-
-</div>
 
 )
 

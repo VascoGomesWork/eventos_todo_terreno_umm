@@ -13,7 +13,7 @@ export default function Localizacao_Evento(){
                 {/*-- Google Maps -*/}
                 <div>
                     <h2>Localização do Evento</h2>
-                    <div id="googleMap" style="width:100%;height:400px;"></div>
+                    <div id="googleMap"></div>
                 </div>
 
 

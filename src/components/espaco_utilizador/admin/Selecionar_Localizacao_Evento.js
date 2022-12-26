@@ -11,7 +11,7 @@ export default function Selecionar_Localizacao_Evento(){
             </div>
             <div class="card-body">
                 <div>
-                    <div id="googleMap" style="width:100%;height:400px;"></div>
+                    <div id="googleMap"></div>
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@ export default function Calendario_Evento(){
                     <ul>
                         <li class="prev">&#10094;</li>
                         <li class="next">&#10095;</li>
-                        <li>August<br/><span style="font-size:18px">2021</span></li>
+                        <li>August<br/><span id="calendario_span">2021</span></li>
                     </ul>
                 </div>
 
