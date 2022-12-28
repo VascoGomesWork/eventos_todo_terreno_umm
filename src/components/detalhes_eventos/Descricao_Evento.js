@@ -8,7 +8,7 @@ export default function Descricao_Evento(){
     //console.log("TESTE = " + window.location.href)
     //console.log("TESTE = " + window.location.href.substr(39, window.location.href.length))
 
-    console.log("ID = " + id)
+    //console.log("ID = " + id)
     useEffect(() => {
         fetch("//localhost:8000/api/eventos/show/" + id)
             .then((res) => res.json())

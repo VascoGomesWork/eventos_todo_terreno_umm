@@ -8,11 +8,6 @@ import {useLocation} from "react-router-dom";
 
 export default function Detalhes_Eventos(){
 
-    const location = useLocation()
-    //const { from } = location.state
-    //console.log("TESTE = " + JSON.stringify(location))
-    //console.log("DATA = " + location.state)
-
     return(
         <div>
 

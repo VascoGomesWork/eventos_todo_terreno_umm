@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
 
 export default function Comentarios_Eventos(){
+
+    const [id, setId] = useState(window.location.href.substr(39, window.location.href.length))
 
     return(
         <div>
@@ -50,8 +52,8 @@ export default function Comentarios_Eventos(){
                     </div>
                 </div>
             </section>
-
-        <h5>Para se Inscrever no evento, faça login no <Link to={'../Login'} class="nav-link" title="Project Name">Espaço do Utilizador</Link> com a sua conta</h5>
+            {/* How to Pass Props to Link -> https://www.kindacode.com/article/react-router-passing-data-states-through-links/ */}
+        <h5>Para se Inscrever no evento, faça login no <Link to={'../Login'} state={id} class="nav-link" title="Project Name">Espaço do Utilizador</Link> com a sua conta</h5>
     </div>
     )
 }

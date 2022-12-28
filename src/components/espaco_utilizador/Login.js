@@ -1,11 +1,16 @@
 import React, {useState} from "react";
 import Head from "./cliente/Head";
 import {Link} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 
 export default function Login(){
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+
+    //How to Pass Props to Link -> https://www.kindacode.com/article/react-router-passing-data-states-through-links/
+
+    console.log("ID LOGIN = " + useLocation().state)
 
     function efetuarLogin(){
 
@@ -58,7 +63,7 @@ export default function Login(){
                                                     <label for="inputPassword">Password</label>
                                                 </div>
                                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                    <a class="btn btn-primary" onClick={efetuarLogin}>Efetuar Login</a>
+                                                    <Link class="btn btn-primary" state={useLocation().state} onClick={efetuarLogin}>Efetuar Login</Link>
                                                 </div>
                                             </form>
                                         </div>

@@ -34,9 +34,7 @@ export default function Criar_Eventos(){
 
                         <Selecionar_Localizacao_Evento />
 
-
                         <Calendario_Evento />
-
 
                         <Requisitos_Eventos />
 

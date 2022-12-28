@@ -5,9 +5,11 @@ import Side_Nav from "../Side_Nav";
 import Informacoes_CLiente from "./Informacoes_Cliente";
 import Footer from "../Footer";
 import Script from "../Script";
+import {useLocation} from "react-router-dom";
 
 export default function Dashboard_Cliente(){
 
+    console.log("ID DASHBOARD = " + JSON.stringify(useLocation()))
     return(
 
         <div>
