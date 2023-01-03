@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Head from "../Head";
 import Nav from "../Nav";
 import Side_Nav from "../Side_Nav";
@@ -16,6 +16,19 @@ import {useLocation} from "react-router-dom";
 export default function Inscrever_Evento(){
 
     console.log("INSCREVER EVENTO ID = " + useLocation().state)
+    var id = useLocation().state;
+
+    const [eventoAtributes, setEventosAtributes] = useState([])
+
+    useEffect(() => {
+       fetch("//localhost:8000/api/eventos/show/" + id)
+          .then((res) => res.json())
+          .then((data) => {
+              console.log("Eventos DATA = " + JSON.stringify(data))
+              //Sets Eventos Atributes with variable Data
+              setEventosAtributes(data)
+          });
+    }, []);
 
     return(
 
