@@ -13,7 +13,7 @@ export default function Nav(){
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Eventos Todo o Terreno</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">Sobre Nós</a></li>
-                        <li class="nav-item"><Link to={"/Dashboard_Cliente"} class="navbar-brand" ><a class="nav-link">Espaço do Utilizador</a></Link></li>
+                        {/*<li class="nav-item"><Link to={"/Dashboard_Cliente"} class="navbar-brand" ><a class="nav-link">Espaço do Utilizador</a></Link></li>*/}
                     </ul>
                 </div>
             </div>

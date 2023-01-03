@@ -1,16 +1,20 @@
 import React, {useState} from "react";
 import Head from "./cliente/Head";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useLocation} from "react-router-dom";
 
 export default function Login(){
 
+    const navigate = useNavigate();
+    var eventoId=0;
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
     //How to Pass Props to Link -> https://www.kindacode.com/article/react-router-passing-data-states-through-links/
 
-    console.log("ID LOGIN = " + useLocation().state)
+    console.log("ID EVENTO LOGIN = " + useLocation().state)
+    //Sets Evento ID to Be used
+    eventoId = useLocation().state
 
     function efetuarLogin(){
 
@@ -32,8 +36,9 @@ export default function Login(){
         }).then((response) => {
             return response.json();
         }).then((parsedData) => {
-            console.log("DATA = " + JSON.stringify(parsedData))
-            window.location.href = "/Dashboard_Cliente"
+            //console.log("DATA = " + JSON.stringify(parsedData))
+            //How to send data through navigate -> https://bobbyhadz.com/blog/react-onclick-redirect
+            navigate("/Dashboard_Cliente", {state:eventoId})
         })
 
     }

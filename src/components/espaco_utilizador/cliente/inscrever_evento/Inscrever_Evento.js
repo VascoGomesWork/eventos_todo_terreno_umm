@@ -10,9 +10,12 @@ import Calendario_Evento from "./Calendario_Evento";
 import Comentarios_Eventos from "../../../detalhes_eventos/Comentarios_Eventos";
 import Footer from "../Footer";
 import Script from "../Script";
+import {useLocation} from "react-router-dom";
 
 
 export default function Inscrever_Evento(){
+
+    console.log("INSCREVER EVENTO ID = " + useLocation().state)
 
     return(
 

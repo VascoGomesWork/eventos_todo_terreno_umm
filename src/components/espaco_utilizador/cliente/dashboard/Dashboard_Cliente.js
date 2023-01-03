@@ -9,7 +9,11 @@ import {useLocation} from "react-router-dom";
 
 export default function Dashboard_Cliente(){
 
-    console.log("ID DASHBOARD = " + JSON.stringify(useLocation()))
+    //How to use Global Variable in React -> https://stackoverflow.com/questions/35577551/how-to-use-global-variables-in-react-native
+    var eventoId = useLocation().state;
+    global.eventoId = eventoId
+    //console.log("ID DASHBOARD = " + JSON.stringify(useLocation()))
+    //console.log("ID EVENTO DASHBOARD = " + global.eventoId)
     return(
 
         <div>

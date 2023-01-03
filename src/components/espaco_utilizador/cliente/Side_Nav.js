@@ -10,7 +10,8 @@ export default function Side_Nav(){
                 <div className="sb-sidenav-menu">
                     <div className="nav">
                         <div className="sb-sidenav-menu-heading">Operações do Sistema</div>
-                            <Link to={"/Inscrever_Evento"} className="nav-link" >Inscrição em Evento</Link>
+                            {/* Passes Global variable through state */}
+                            <Link to={"/Inscrever_Evento"} state={global.eventoId} className="nav-link" >Inscrição em Evento</Link>
                     </div>
                 </div>
                 <div className="sb-sidenav-footer">
