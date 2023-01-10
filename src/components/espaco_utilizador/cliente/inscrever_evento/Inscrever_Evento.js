@@ -13,6 +13,7 @@ import Script from "../Script";
 import {useLocation} from "react-router-dom";
 import Requisitos_Evento from "./Requisitos_Evento";
 import Descricao_Evento from "./Descricao_Evento";
+import Form_Participante from "./Form_Participante";
 
 
 
@@ -57,7 +58,7 @@ export default function Inscrever_Evento(){
                                 <li class="breadcrumb-item active">Esta secção é para ser realizada a inscrição nos eventos todo-o-terreno</li>
                             </ol>
 
-                            <h3>Selecione o evento que pretende participar da tabela seguinte</h3>
+                            <h3>Inscreva-se no Evento Preenchendo os Seguintes Campos</h3>
 
 
                             <div class="row">
@@ -75,6 +76,7 @@ export default function Inscrever_Evento(){
                             {/* FIX */}
                             <Calendario_Evento eventosAtributes={eventoAtributes}/>
 
+                            <Form_Participante />
 
                             <Comentarios_Eventos eventosAtributes={eventoAtributes}/>
 
