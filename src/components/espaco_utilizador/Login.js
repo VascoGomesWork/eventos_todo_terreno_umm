@@ -8,13 +8,39 @@ export default function Login(){
     const navigate = useNavigate();
     var eventoId=0;
     const [email, setEmail] = useState("")
+    const [emailOrganizador, setEmailOrganizador] = useState("")
+    const [emailParticipante, setEmailParticipante] = useState("")
     const [password, setPassword] = useState("")
+    const [passwordOrganizador, setPasswordOrganizador] = useState("")
+    const [passwordParticipante, setPasswordParticipante] = useState("")
 
     //How to Pass Props to Link -> https://www.kindacode.com/article/react-router-passing-data-states-through-links/
 
     console.log("ID EVENTO LOGIN = " + useLocation().state)
     //Sets Evento ID to Be used
     eventoId = useLocation().state
+
+    //Get Organizador Data
+    React.useEffect(()=>{
+        fetch('http://localhost:8000/api/organizador/show/1')
+            .then(res => res.json())
+            .then(data => {
+                console.log("Organizador = " + JSON.stringify(data))
+                setEmailOrganizador(data.email)
+                setPasswordOrganizador(data.id)
+            })
+    }, [])
+
+    //Get Particpantes Data
+    React.useEffect(()=>{
+        fetch('http://localhost:8000/api/participante/show/1')
+            .then(res => res.json())
+            .then(data => {
+                console.log("Participante = " + JSON.stringify(data))
+                setEmailParticipante(data.email)
+                setPasswordParticipante(data.id)
+            })
+    }, [])
 
     function efetuarLogin(){
 
@@ -36,10 +62,20 @@ export default function Login(){
         }).then((response) => {
             return response.json();
         }).then((parsedData) => {
-            //console.log("DATA = " + JSON.stringify(parsedData))
-            //How to send data through navigate -> https://bobbyhadz.com/blog/react-onclick-redirect
-            navigate("/Dashboard_Cliente", {state:eventoId})
-        })
+
+            console.log("ORGANIZADOR EMAIL = " + emailOrganizador)
+            console.log("ORGANIZADOR PASS = " + passwordOrganizador)
+            //Checks if it is organizador trying to login
+            if(email == emailOrganizador && password == passwordOrganizador){
+                console.log("Organizador")
+                //How to send data through navigate -> https://bobbyhadz.com/blog/react-onclick-redirect
+                navigate("/Dashboard_Admin", {state: eventoId})
+            } else /*if(email == emailParticipante && password == passwordParticipante)*/ {
+                console.log("Cliente")
+                //How to send data through navigate -> https://bobbyhadz.com/blog/react-onclick-redirect
+                navigate("/Dashboard_Cliente", {state: eventoId})
+            }
+        }, [])
 
     }
 
