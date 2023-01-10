@@ -2,45 +2,21 @@ import React, {useState} from "react";
 import Head from "./cliente/Head";
 import {Link, useNavigate} from "react-router-dom";
 import {useLocation} from "react-router-dom";
+import Alert from "../Alert";
 
 export default function Login(){
 
     const navigate = useNavigate();
     var eventoId=0;
     const [email, setEmail] = useState("")
-    const [emailOrganizador, setEmailOrganizador] = useState("")
-    const [emailParticipante, setEmailParticipante] = useState("")
     const [password, setPassword] = useState("")
-    const [passwordOrganizador, setPasswordOrganizador] = useState("")
-    const [passwordParticipante, setPasswordParticipante] = useState("")
+    const [alert, setAlert] = useState(false)
 
     //How to Pass Props to Link -> https://www.kindacode.com/article/react-router-passing-data-states-through-links/
 
     console.log("ID EVENTO LOGIN = " + useLocation().state)
     //Sets Evento ID to Be used
     eventoId = useLocation().state
-
-    //Get Organizador Data
-    React.useEffect(()=>{
-        fetch('http://localhost:8000/api/organizador/show/1')
-            .then(res => res.json())
-            .then(data => {
-                console.log("Organizador = " + JSON.stringify(data))
-                setEmailOrganizador(data.email)
-                setPasswordOrganizador(data.id)
-            })
-    }, [])
-
-    //Get Particpantes Data
-    React.useEffect(()=>{
-        fetch('http://localhost:8000/api/participante/show/1')
-            .then(res => res.json())
-            .then(data => {
-                console.log("Participante = " + JSON.stringify(data))
-                setEmailParticipante(data.email)
-                setPasswordParticipante(data.id)
-            })
-    }, [])
 
     function efetuarLogin(){
 
@@ -53,7 +29,6 @@ export default function Login(){
                 'Content-Type': 'application/json;charset=utf-8',
                 "Access-Control-Allow-Origin": "*",
                 "Accept": "application/json"
-
             },
             body: JSON.stringify({
                 "email": email,
@@ -63,18 +38,23 @@ export default function Login(){
             return response.json();
         }).then((parsedData) => {
 
-            console.log("ORGANIZADOR EMAIL = " + emailOrganizador)
-            console.log("ORGANIZADOR PASS = " + passwordOrganizador)
-            //Checks if it is organizador trying to login
-            if(email == emailOrganizador && password == passwordOrganizador){
-                console.log("Organizador")
-                //How to send data through navigate -> https://bobbyhadz.com/blog/react-onclick-redirect
-                navigate("/Dashboard_Admin", {state: eventoId})
-            } else /*if(email == emailParticipante && password == passwordParticipante)*/ {
-                console.log("Cliente")
-                //How to send data through navigate -> https://bobbyhadz.com/blog/react-onclick-redirect
+            //Checks if it is a Participant or a Organizador
+            if(parsedData.type === "participante"){
+                //How to send data through navigate -> https://bobbyhadz.com/blog/react-onclick-redirectnpm
                 navigate("/Dashboard_Cliente", {state: eventoId})
+            } else if(parsedData.type === "organizador"){
+                //How to send data through navigate -> https://bobbyhadz.com/blog/react-onclick-redirectnpm
+                navigate("/Dashboard_Admin", {state: eventoId})
+            } else {
+                //Sets Alert
+                setAlert(prevState => !prevState)
+
+                //Makes Alert Disapear
+                setTimeout(() => {
+                    setAlert(prevState => !prevState)
+                }, 3000)
             }
+
         }, [])
 
     }
@@ -106,6 +86,7 @@ export default function Login(){
                                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                     <Link class="btn btn-primary" state={useLocation().state} onClick={efetuarLogin}>Efetuar Login</Link>
                                                 </div>
+                                                {alert && <Alert type="0" message="Dados de Login Incorretos"/>}
                                             </form>
                                         </div>
                                         <div class="card-footer text-center py-3">
