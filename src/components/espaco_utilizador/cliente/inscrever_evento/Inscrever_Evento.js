@@ -11,6 +11,9 @@ import Comentarios_Eventos from "../../../detalhes_eventos/Comentarios_Eventos";
 import Footer from "../Footer";
 import Script from "../Script";
 import {useLocation} from "react-router-dom";
+import Requisitos_Evento from "./Requisitos_Evento";
+import Descricao_Evento from "./Descricao_Evento";
+
 
 
 export default function Inscrever_Evento(){
@@ -59,19 +62,21 @@ export default function Inscrever_Evento(){
 
                             <div class="row">
 
-                                <Imagem_evento />
+                                <Imagem_evento iamgem={eventoAtributes.imagem}/>
 
-                                <Requisitos_Eventos />
+                                <Descricao_Evento descricao={eventoAtributes.descricao}/>
+
+                                <Requisitos_Evento requisitos={eventoAtributes.requisitos}/>
 
                             </div>
 
-                            <Localizacao_Evento />
+                            <Localizacao_Evento localizacao={[eventoAtributes.localidade_inicio, eventoAtributes.pontos_passagem, eventoAtributes.localidade_fim]}/>
 
                             {/* FIX */}
-                            <Calendario_Evento />
+                            <Calendario_Evento eventosAtributes={eventoAtributes}/>
 
 
-                            <Comentarios_Eventos />
+                            <Comentarios_Eventos eventosAtributes={eventoAtributes}/>
 
 
                         </div>

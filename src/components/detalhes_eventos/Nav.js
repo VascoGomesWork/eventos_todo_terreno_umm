@@ -13,6 +13,7 @@ export default function Nav(){
                         <ul class="navbar-nav ms-auto my-2 my-lg-0">
                             <li class="nav-item"><a class="nav-link" href="#passeio_todo_o_terreno">Detalhes do Passeio Todo-o-Terreno</a></li>
                             <li class="nav-item"><a class="nav-link" href="#forum_mensagens">Fórum de Mensagens</a></li>
+                            {/* TODO - Send Event ID to Login */}
                             <li class="nav-item"><Link to={'../Login'} class="nav-link" title="Project Name">Espaço do Utilizador</Link></li>
                     </ul>
                 </div>
