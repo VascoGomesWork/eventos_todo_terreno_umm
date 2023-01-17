@@ -1,23 +1,32 @@
-import React from "react";
+import React, {useState} from "react";
 import Head from "../Head";
 import Nav from "../Nav";
 import Side_Nav from "../Side_Nav";
-import Selecionar_Localizacao_Evento from "../Selecionar_Localizacao_Evento";
-import Calendario_Evento from "../Calendario_Evento";
-import Requisitos_Eventos from "../../../detalhes_eventos/Requisitos_Eventos";
-import Comentarios_Eventos from "../../../detalhes_eventos/Comentarios_Eventos";
+import Selecionar_Localizacao_Evento from "./Selecionar_Localizacao_Evento";
+import Calendario_Evento from "./Calendario_Evento";
+
 import Footer from "../Footer";
 import Scripts from "../Scripts";
-import Descricao_Evento from "../Descricao_Evento";
-import Perguntas_Participantes from "../Perguntas_Participantes";
+import Descricao_Evento from "./Descricao_Evento";
+import Perguntas_Participantes from "./Perguntas_Participantes";
+import Requisitos_Evento from "./Requisitos_Evento";
 
 export default function Criar_Eventos(){
+
+    function criarEvento() {
+        console.log("CRIAR EVENTO - REQUISITOS = " + global.requisitosEvento)
+        console.log("CRIAR EVENTO - DESCRICAO = " + global.descricaoEvento)
+
+        console.log("CRIAR EVENTO - TELEFONE = " + global.telefone)
+        console.log("CRIAR EVENTO - LOCAL RESIDENCIA = " + global.localResidencia)
+        console.log("CRIAR EVENTO - LOCAIS INTRESSE = " + global.locaisIntresse)
+        console.log("CRIAR EVENTO - MATRICULA UMM = " + global.matriculaUMM)
+        console.log("CRIAR EVENTO - NUMERO ACOMPANHANTES = " + global.numeroAcompanhantes)
+    }
 
     return(
 
         <div>
-            <Head />,
-
         <body class="sb-nav-fixed">
 
             <Nav />
@@ -38,14 +47,14 @@ export default function Criar_Eventos(){
 
                         <Calendario_Evento />
 
-                        <Requisitos_Eventos />
+                        <Requisitos_Evento />
 
                         <Descricao_Evento />
 
                         <Perguntas_Participantes />
 
                         <div>
-                            <button>Criar Evento Todo-o-Terreno</button>
+                            <button onClick={criarEvento}>Criar Evento Todo-o-Terreno</button>
                         </div>
 
                     </div>

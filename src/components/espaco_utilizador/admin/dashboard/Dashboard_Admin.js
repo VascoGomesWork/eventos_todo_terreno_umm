@@ -11,7 +11,7 @@ export default function Dashboard_Admin(){
 
     return(
 
-    <Head />,
+
     <body class="sb-nav-fixed">
 
     <Nav />

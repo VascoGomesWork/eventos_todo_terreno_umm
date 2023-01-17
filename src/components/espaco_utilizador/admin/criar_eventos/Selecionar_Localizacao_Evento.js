@@ -13,6 +13,8 @@ export default function Selecionar_Localizacao_Evento(){
                 <div>
                     <div id="googleMap"></div>
                 </div>
+
+                <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
             </div>
         </div>
 
