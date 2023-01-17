@@ -15,27 +15,6 @@ export default function Informacoes_Admin(){
                         </div>
                     </div>
                 </div>
-                <div className="col-xl-3 col-md-6">
-                    <div className="card bg-warning text-white mb-4">
-                        <div className="card-body">Eventos Visualizados = 0</div>
-                        <div className="card-footer d-flex align-items-center justify-content-between">
-                        </div>
-                    </div>
-                </div>
-                <div className="col-xl-3 col-md-6">
-                    <div className="card bg-success text-white mb-4">
-                        <div className="card-body">Eventos Atualizados = 0</div>
-                        <div className="card-footer d-flex align-items-center justify-content-between">
-                        </div>
-                    </div>
-                </div>
-                <div className="col-xl-3 col-md-6">
-                    <div className="card bg-danger text-white mb-4">
-                        <div className="card-body">Eventos Apagados = 0</div>
-                        <div className="card-footer d-flex align-items-center justify-content-between">
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>

@@ -8,6 +8,8 @@ import Requisitos_Eventos from "../../../detalhes_eventos/Requisitos_Eventos";
 import Comentarios_Eventos from "../../../detalhes_eventos/Comentarios_Eventos";
 import Footer from "../Footer";
 import Scripts from "../Scripts";
+import Descricao_Evento from "../Descricao_Evento";
+import Perguntas_Participantes from "../Perguntas_Participantes";
 
 export default function Criar_Eventos(){
 
@@ -38,7 +40,9 @@ export default function Criar_Eventos(){
 
                         <Requisitos_Eventos />
 
-                        <Comentarios_Eventos />
+                        <Descricao_Evento />
+
+                        <Perguntas_Participantes />
 
                         <div>
                             <button>Criar Evento Todo-o-Terreno</button>
