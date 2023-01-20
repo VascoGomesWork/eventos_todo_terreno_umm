@@ -10,6 +10,7 @@ import Scripts from "../Scripts";
 import Descricao_Evento from "./Descricao_Evento";
 import Perguntas_Participantes from "./Perguntas_Participantes";
 import Requisitos_Evento from "./Requisitos_Evento";
+import Image_Chooser from "./Image_Chooser";
 
 export default function Criar_Eventos(){
 
@@ -17,11 +18,11 @@ export default function Criar_Eventos(){
         console.log("CRIAR EVENTO - REQUISITOS = " + global.requisitosEvento)
         console.log("CRIAR EVENTO - DESCRICAO = " + global.descricaoEvento)
 
-        console.log("CRIAR EVENTO - TELEFONE = " + global.telefone)
-        console.log("CRIAR EVENTO - LOCAL RESIDENCIA = " + global.localResidencia)
-        console.log("CRIAR EVENTO - LOCAIS INTRESSE = " + global.locaisIntresse)
-        console.log("CRIAR EVENTO - MATRICULA UMM = " + global.matriculaUMM)
-        console.log("CRIAR EVENTO - NUMERO ACOMPANHANTES = " + global.numeroAcompanhantes)
+        console.log("CRIAR EVENTO - TELEFONE = " + global.pergunta1)
+        console.log("CRIAR EVENTO - LOCAL RESIDENCIA = " + global.pergunta2)
+        console.log("CRIAR EVENTO - LOCAIS INTRESSE = " + global.pergunta3)
+        console.log("CRIAR EVENTO - MATRICULA UMM = " + global.pergunta4)
+        console.log("CRIAR EVENTO - NUMERO ACOMPANHANTES = " + global.pergunta5)
     }
 
     return(
@@ -42,6 +43,8 @@ export default function Criar_Eventos(){
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Para criar um evento todo-o-terreno, é necessário escolher a localização do evento no mapa, de seguida selecionar a data do evento no calendário, posteriormente enumerar os requisitos do mesmo e por último fazer uma breve descrição do evento, e criar o evento</li>
                         </ol>
+
+                        <Image_Chooser />
 
                         <Selecionar_Localizacao_Evento />
 

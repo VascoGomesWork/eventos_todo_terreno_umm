@@ -11712,3 +11712,8 @@ body {
 #calendario_span{
     font-size:18px
 }
+
+#imageChooser{
+    width: 100%;
+    height: 50%;
+}

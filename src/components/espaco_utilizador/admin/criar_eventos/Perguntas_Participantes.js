@@ -2,16 +2,16 @@ import React, {useState} from "react";
 
 export default function Perguntas_Participantes(){
 
-    const [telefone, setTelefone] = useState("")
-    const [localResidencia, setLocalResidencia] = useState("")
-    const [locaisIntresse, setLocaisIntresse] = useState("")
-    const [matriculaUMM, setMatriculaUMM] = useState("")
-    const [numeroAcompanhantes, setNumeroAcompanhantes] = useState(0)
-    global.telefone = telefone
-    global.localResidencia = localResidencia
-    global.locaisIntresse = locaisIntresse
-    global.matriculaUMM = matriculaUMM
-    global.numeroAcompanhantes = numeroAcompanhantes
+    const [pergunta1, setPergunta1] = useState("")
+    const [pergunta2, setPergunta2] = useState("")
+    const [pergunta3, setPergunta3] = useState("")
+    const [pergunta4, setPergunta4] = useState("")
+    const [pergunta5, setPergunta5] = useState(0)
+    global.pergunta1 = pergunta1
+    global.pergunta2 = pergunta2
+    global.pergunta3 = pergunta3
+    global.pergunta4 = pergunta4
+    global.pergunta5 = pergunta5
 
     return(
         <div className="card mb-4">
@@ -22,31 +22,31 @@ export default function Perguntas_Participantes(){
             <div className="card-body">
                 <div className="row">
                     <div className="col-md-9">
-                        <input type="text" onChange={(e) => setTelefone(e.target.value)}/>
+                        <input type="text" onChange={(e) => setPergunta1(e.target.value)}/>
                     </div>
                 </div>
 
                 <div className="row">
                     <div className="col-md-9">
-                        <input type="text" onChange={(e) => setLocalResidencia(e.target.value)}/>
+                        <input type="text" onChange={(e) => setPergunta2(e.target.value)}/>
                     </div>
                 </div>
 
                 <div className="row">
                     <div className="col-md-9">
-                        <input type="text" onChange={(e) => setLocaisIntresse(e.target.value)}/>
+                        <input type="text" onChange={(e) => setPergunta3(e.target.value)}/>
                     </div>
                 </div>
 
                 <div className="row">
                     <div className="col-md-9">
-                        <input type="text" onChange={(e) => setMatriculaUMM(e.target.value)}/>
+                        <input type="text" onChange={(e) => setPergunta4(e.target.value)}/>
                     </div>
                 </div>
 
                 <div className="row">
                     <div className="col-md-9">
-                        <input type="text" onChange={(e) => setNumeroAcompanhantes(e.target.value)}/>
+                        <input type="text" onChange={(e) => setPergunta5(e.target.value)}/>
                     </div>
                 </div>
             </div>
