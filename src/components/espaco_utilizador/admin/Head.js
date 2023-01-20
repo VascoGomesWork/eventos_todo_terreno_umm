@@ -14,6 +14,7 @@ export default function Head(){
             <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet"/>
             <link href="../style.css" rel="stylesheet"/>
             <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossOrigin="anonymous"></script>
+
         </head>
     )
 }
