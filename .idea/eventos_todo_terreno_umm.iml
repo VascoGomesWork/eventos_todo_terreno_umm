@@ -122,5 +122,8 @@
     <orderEntry type="library" name="bootstrap-icons" level="application" />
     <orderEntry type="library" name="SimpleLightbox" level="application" />
     <orderEntry type="library" name="font-awesome" level="application" />
+    <orderEntry type="library" name="mapsjs-core" level="application" />
+    <orderEntry type="library" name="mapsjs-service" level="application" />
+    <orderEntry type="library" name="mapsjs-ui" level="application" />
   </component>
 </module>
