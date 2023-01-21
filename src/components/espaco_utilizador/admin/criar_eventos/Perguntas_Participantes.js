@@ -21,32 +21,47 @@ export default function Perguntas_Participantes(){
             </div>
             <div className="card-body">
                 <div className="row">
-                    <div className="col-md-9">
-                        <input type="text" onChange={(e) => setPergunta1(e.target.value)}/>
+                    <div className="col-md-2">
+                        <label>Tabela X</label>
+                    </div>
+                    <div className="col-md-10">
+                        <input className="form-control" type="text" onChange={(e) => setPergunta1(e.target.value)}/>
                     </div>
                 </div>
 
                 <div className="row">
-                    <div className="col-md-9">
-                        <input type="text" onChange={(e) => setPergunta2(e.target.value)}/>
+                    <div className="col-md-2">
+                        <label>Tabela X</label>
+                    </div>
+                    <div className="col-md-10">
+                        <input className="form-control" type="text" onChange={(e) => setPergunta2(e.target.value)}/>
                     </div>
                 </div>
 
                 <div className="row">
-                    <div className="col-md-9">
-                        <input type="text" onChange={(e) => setPergunta3(e.target.value)}/>
+                    <div className="col-md-2">
+                        <label>Tabela X</label>
+                    </div>
+                    <div className="col-md-10">
+                        <input className="form-control" type="text" onChange={(e) => setPergunta3(e.target.value)}/>
                     </div>
                 </div>
 
                 <div className="row">
-                    <div className="col-md-9">
-                        <input type="text" onChange={(e) => setPergunta4(e.target.value)}/>
+                    <div className="col-md-2">
+                        <label>Tabela X</label>
+                    </div>
+                    <div className="col-md-10">
+                        <input className="form-control" type="text" onChange={(e) => setPergunta4(e.target.value)}/>
                     </div>
                 </div>
 
                 <div className="row">
-                    <div className="col-md-9">
-                        <input type="text" onChange={(e) => setPergunta5(e.target.value)}/>
+                    <div className="col-md-2">
+                        <label>Tabela X</label>
+                    </div>
+                    <div className="col-md-10">
+                        <input className="form-control" type="text" onChange={(e) => setPergunta5(e.target.value)}/>
                     </div>
                 </div>
             </div>

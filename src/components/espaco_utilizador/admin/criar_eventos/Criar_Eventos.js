@@ -57,7 +57,7 @@ export default function Criar_Eventos(){
                         <Perguntas_Participantes />
 
                         <div>
-                            <button onClick={criarEvento}>Criar Evento Todo-o-Terreno</button>
+                            <button className="btn btn-primary" onClick={criarEvento}>Criar Evento Todo-o-Terreno</button>
                         </div>
 
                     </div>

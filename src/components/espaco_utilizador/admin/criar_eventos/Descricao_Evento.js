@@ -12,7 +12,8 @@ export default function Descricao_Evento(){
                 Faça uma Breve Descrição do Evento
             </div>
             <div className="card-body">
-                <input type="text" onChange={(e) => setDescricaoEvento(e.target.value)}/>
+                {/* Text Area -> https://getbootstrap.com/docs/4.0/components/forms/ */}
+                <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" onChange={(e) => setDescricaoEvento(e.target.value)}/>
             </div>
         </div>
     )

@@ -12,7 +12,8 @@ export default function Requisitos_Evento(){
                 Insira os Requisitos do Evento
             </div>
             <div className="card-body">
-                <input type="text" onChange={(e) => setRequisitosEvento(e.target.value)}/>
+                {/* Text Area -> https://getbootstrap.com/docs/4.0/components/forms/ */}
+                <textarea className="form-control" id="exampleFormControlTextarea1" rows="6" onChange={(e) => setRequisitosEvento(e.target.value)}/>
             </div>
         </div>
     )

@@ -20,7 +20,7 @@ export default function Calendario_Evento(){
 
             <div className="card-body">
                 {/* https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_input_date_get */}
-                <input type="date" id="myDate" value={newDate === "" ? finalDate : newDate} onChange={(e) => setNewDate(e.target.value)}/>
+                <input className="form-control" type="date" id="myDate" value={newDate === "" ? finalDate : newDate} onChange={(e) => setNewDate(e.target.value)}/>
                 {console.log("NEW DATE = " + newDate)}
             </div>
 
