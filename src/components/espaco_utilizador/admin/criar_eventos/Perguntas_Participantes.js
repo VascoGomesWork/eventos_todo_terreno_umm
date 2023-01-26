@@ -2,16 +2,16 @@ import React, {useState} from "react";
 
 export default function Perguntas_Participantes(){
 
-    const [pergunta1, setPergunta1] = useState("")
-    const [pergunta2, setPergunta2] = useState("")
-    const [pergunta3, setPergunta3] = useState("")
-    const [pergunta4, setPergunta4] = useState("")
-    const [pergunta5, setPergunta5] = useState(0)
-    global.pergunta1 = pergunta1
-    global.pergunta2 = pergunta2
-    global.pergunta3 = pergunta3
-    global.pergunta4 = pergunta4
-    global.pergunta5 = pergunta5
+    const [pergunta_evento_1, setPerguntaEvento1] = useState("")
+    const [pergunta_evento_2, setPerguntaEvento2] = useState("")
+    const [pergunta_evento_3, setPerguntaEvento3] = useState("")
+    const [pergunta_participante_1, setPerguntaParticipante1] = useState("")
+    const [pergunta_participante_2, setPerguntaParticipante2] = useState(0)
+    global.pergunta_evento_1 = pergunta_evento_1
+    global.pergunta_evento_2 = pergunta_evento_2
+    global.pergunta_evento_3 = pergunta_evento_3
+    global.pergunta_participante_1 = pergunta_participante_1
+    global.pergunta_participante_2 = pergunta_participante_2
 
     return(
         <div className="card mb-4">
@@ -21,18 +21,26 @@ export default function Perguntas_Participantes(){
             </div>
             <div className="card-body">
                 <div className="col-md-5">
+                    <label>Pergunta Relacionada com o Evento</label>
+                </div>
+                <div className="row">
+                    <div className="col-md-10">
+                        <input className="form-control" type="text" onChange={(e) => setPerguntaParticipante2(e.target.value)}/>
+                    </div>
+                </div>
+                <div className="col-md-5">
                     <label>Pergunta Relacionada com Participante</label>
                 </div>
                 <div className="row">
 
                     <div className="col-md-10">
-                        <input className="form-control" type="text" onChange={(e) => setPergunta1(e.target.value)}/>
+                        <input className="form-control" type="text" onChange={(e) => setPerguntaEvento1(e.target.value)}/>
                     </div>
                 </div>
 
                 <div className="row">
                     <div className="col-md-10">
-                        <input className="form-control" type="text" onChange={(e) => setPergunta2(e.target.value)}/>
+                        <input className="form-control" type="text" onChange={(e) => setPerguntaEvento2(e.target.value)}/>
                     </div>
                 </div>
 
@@ -41,22 +49,13 @@ export default function Perguntas_Participantes(){
                 </div>
                 <div className="row">
                     <div className="col-md-10">
-                        <input className="form-control" type="text" onChange={(e) => setPergunta3(e.target.value)}/>
+                        <input className="form-control" type="text" onChange={(e) => setPerguntaEvento3(e.target.value)}/>
                     </div>
                 </div>
 
                 <div className="row">
                     <div className="col-md-10">
-                        <input className="form-control" type="text" onChange={(e) => setPergunta4(e.target.value)}/>
-                    </div>
-                </div>
-
-                <div className="col-md-5">
-                    <label>Pergunta Relacionada com o Evento</label>
-                </div>
-                <div className="row">
-                    <div className="col-md-10">
-                        <input className="form-control" type="text" onChange={(e) => setPergunta5(e.target.value)}/>
+                        <input className="form-control" type="text" onChange={(e) => setPerguntaParticipante1(e.target.value)}/>
                     </div>
                 </div>
             </div>

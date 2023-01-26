@@ -4,9 +4,10 @@ export default function Selecionar_Localizacao_Evento(){
 
     const [localidadeInicioEventoList, setLocalidadeInicioEventoList] = useState([{id:1, nome:"Lousã"}, {id:2, nome:"Álcacer do Sal"}, {id:3, nome:"Beja"}, {id:4, nome:"Sagres"}, {id:5, nome:"Ponta de Sol(Madeira)"}, {id:6, nome:"Ponta de Sol(Madeira)"}])
     const [localidadeFimEventoList, setLocalidadeFimEventoList] = useState([{id:1, nome:"Vila Nova de Famalicão"}, {id:2, nome:"Beja"}, {id:3, nome:"Quarteira"}, {id:4, nome:"Faro"}, {id:5, nome:"Ponta de São Lourenço(Madeira)"}, {id:6, nome:"Poça das Lesmas, Seixal(Madeira)"}])
-
     const [localidadeInicioEvento, setLocalidadeInicioEvento] = useState("")
     const [localidadeFimEvento, setLocalidadeFimEvento] = useState("")
+    global.localidade_inicio = localidadeInicioEvento
+    global.localidade_fim = localidadeFimEvento
 
     function definirLocalidadeInicio(e) {
         setLocalidadeFimEventoList([{id:1, nome:"Vila Nova de Famalicão"}, {id:2, nome:"Beja"}, {id:3, nome:"Quarteira"}, {id:4, nome:"Faro"}, {id:5, nome:"Ponta de São Lourenço(Madeira)"}, {id:6, nome:"Poça das Lesmas, Seixal(Madeira)"}])

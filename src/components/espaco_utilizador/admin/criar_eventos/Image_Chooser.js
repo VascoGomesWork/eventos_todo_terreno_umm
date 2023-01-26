@@ -3,6 +3,7 @@ import React, {useState} from "react";
 export default function Image_Chooser(){
 
     const [image, setImage] = useState("")
+    global.imagem = image
 
     return(
         <div className="card mb-4">

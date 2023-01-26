@@ -11,18 +11,63 @@ import Descricao_Evento from "./Descricao_Evento";
 import Perguntas_Participantes from "./Perguntas_Participantes";
 import Requisitos_Evento from "./Requisitos_Evento";
 import Image_Chooser from "./Image_Chooser";
+import Alert from "../../../Alert";
+import Nome_Evento from "./Nome_Evento";
 
 export default function Criar_Eventos(){
 
-    function criarEvento() {
-        console.log("CRIAR EVENTO - REQUISITOS = " + global.requisitosEvento)
-        console.log("CRIAR EVENTO - DESCRICAO = " + global.descricaoEvento)
+    const [alert, setAlert] = useState(false)
 
-        console.log("CRIAR EVENTO - TELEFONE = " + global.pergunta1)
-        console.log("CRIAR EVENTO - LOCAL RESIDENCIA = " + global.pergunta2)
-        console.log("CRIAR EVENTO - LOCAIS INTRESSE = " + global.pergunta3)
-        console.log("CRIAR EVENTO - MATRICULA UMM = " + global.pergunta4)
-        console.log("CRIAR EVENTO - NUMERO ACOMPANHANTES = " + global.pergunta5)
+    function criarEvento() {
+
+        console.log("Nome = " + global.nome)
+        console.log("Imagem = " + global.imagem)
+        console.log("Data Inicio = " + global.data_inicio)
+        console.log("Data Fim = " + global.data_fim)
+        console.log("Localidade Inicio = " + global.localidade_inicio)
+        console.log("Pergunta Evento 1 = " + global.pergunta_evento_1)
+        console.log("Pergunta Evento 2 = " + global.pergunta_evento_2)
+        console.log("Pergunta Evento 3 = " + global.pergunta_evento_3)
+        console.log("Pergunta Participante 1 = " + global.pergunta_participante_1)
+        console.log("Pergunta Participante 2 = " + global.pergunta_participante_2)
+        console.log("Localidade Fim = " + global.localidade_fim)
+        console.log("Requisitos = " + global.requisitosEvento)
+        console.log("Descrição = " + global.descricaoEvento)
+
+        /*fetch(`http://localhost:8000/api/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8',
+                "Access-Control-Allow-Origin": "*",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                "nome": global.nome,
+                "imagem": global.imagem,
+                "data_inicio": global.data_inicio,
+                "data_fim": global.data_fim,
+                "localidade_inicio": global.localidade_inicio,
+                "pergunta_evento_1": global.pergunta_evento_1,
+                "pergunta_evento_2": global.pergunta_evento_2,
+                "pergunta_evento_3": global.pergunta_evento_3,
+                "pergunta_participante_1": global.pergunta_participante_1,
+                "pergunta_participante_2": global.pergunta_participante_2,
+                "localidade_fim": global.localidade_fim,
+                "requisitos": global.requisitosEvento,
+                "descricao": global.descricaoEvento,
+                "id_organizador_fk": 1
+            }), // body data type must match "Content-Type" header
+        }).then((response) => {
+            return response.json();
+        }).then((parsedData) => {
+            //Sets Alert
+            setAlert(prevState => !prevState)
+
+            //Makes Alert Disapear
+            setTimeout(() => {
+                setAlert(prevState => !prevState)
+            }, 3000)
+        })*/
     }
 
     return(
@@ -44,6 +89,8 @@ export default function Criar_Eventos(){
                             <li class="breadcrumb-item active">Para criar um evento todo-o-terreno, é necessário escolher a localização do evento no mapa, de seguida selecionar a data do evento no calendário, posteriormente enumerar os requisitos do mesmo e por último fazer uma breve descrição do evento, e criar o evento</li>
                         </ol>
 
+                        <Nome_Evento/>
+
                         <Image_Chooser />
 
                         <Selecionar_Localizacao_Evento />
@@ -56,13 +103,14 @@ export default function Criar_Eventos(){
 
                         <Perguntas_Participantes />
 
-                        <div>
+                        <div id="criar_Evento">
                             <button className="btn btn-primary" onClick={criarEvento}>Criar Evento Todo-o-Terreno</button>
+                            {alert && <Alert type="0" message="Inscreveu-se no Evento com Sucesso"/>}
                         </div>
 
                     </div>
                 </main>
-
+                <br/>
                 <Footer />
 
             </div>
