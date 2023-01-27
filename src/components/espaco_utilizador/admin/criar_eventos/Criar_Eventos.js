@@ -17,6 +17,7 @@ import Nome_Evento from "./Nome_Evento";
 export default function Criar_Eventos(){
 
     const [alert, setAlert] = useState(false)
+    const [alertFailed, setAlertFailed] = useState(false)
 
     function criarEvento() {
 
@@ -34,9 +35,11 @@ export default function Criar_Eventos(){
         console.log("Requisitos = " + global.requisitosEvento)
         console.log("Descrição = " + global.descricaoEvento)
 
-        /*fetch(`http://localhost:8000/api/login`, {
+        fetch(`http://localhost:8000/api/eventos/store`, {
             method: 'POST',
             headers: {
+                /* Put Token Given in Login */
+                'Authorization': 'Bearer '+ "1|WHkaA7qOeyxSS1wvgwcgHmppRib04AJwi0juuV6b",
                 'Content-Type': 'application/json;charset=utf-8',
                 "Access-Control-Allow-Origin": "*",
                 "Accept": "application/json"
@@ -60,14 +63,30 @@ export default function Criar_Eventos(){
         }).then((response) => {
             return response.json();
         }).then((parsedData) => {
-            //Sets Alert
-            setAlert(prevState => !prevState)
+            console.log("Parsed Data = " + JSON.stringify(parsedData))
 
-            //Makes Alert Disapear
-            setTimeout(() => {
+            //Failed to Create an Event
+            if(parsedData.errors || parsedData.message === "Unauthenticated."){
+                //Sets Alert
+                setAlertFailed(prevState => !prevState)
+
+                //Makes Alert Disapear
+                setTimeout(() => {
+                    setAlertFailed(prevState => !prevState)
+                }, 3000)
+            } else {
+
+                //Sets Alert
                 setAlert(prevState => !prevState)
-            }, 3000)
-        })*/
+
+                //Makes Alert Disapear
+                setTimeout(() => {
+                    setAlert(prevState => !prevState)
+                }, 3000)
+
+            }
+
+        })
     }
 
     return(
@@ -105,7 +124,8 @@ export default function Criar_Eventos(){
 
                         <div id="criar_Evento">
                             <button className="btn btn-primary" onClick={criarEvento}>Criar Evento Todo-o-Terreno</button>
-                            {alert && <Alert type="0" message="Inscreveu-se no Evento com Sucesso"/>}
+                            {alertFailed && <Alert type="0" message="Preencha Todos os Campos"/>}
+                            {alert && <Alert type="1" message="Evento Criado com Sucesso"/>}
                         </div>
 
                     </div>

@@ -3,11 +3,12 @@ import React, {useState} from "react";
 
 export default function Calendario_Evento(){
 
-    const [dataInicio, setDataInicio] = useState("")
-    const [dataFim, setDataFim] = useState("")
     //How to get date -> https://www.tutsmake.com/react-js-get-current-date-and-time-tutorial/
     var date = (new Date().toLocaleDateString().substr(0, 10)).replace("/", "-").replace("/", "-")
     var finalDate = date.substr(6) + "-" + date.substr(3,5)
+
+    const [dataInicio, setDataInicio] = useState(finalDate)
+    const [dataFim, setDataFim] = useState(finalDate)
     global.data_inicio = dataInicio
     global.data_fim = dataFim
 
