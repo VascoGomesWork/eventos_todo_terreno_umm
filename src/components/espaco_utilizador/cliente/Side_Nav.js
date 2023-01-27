@@ -10,8 +10,8 @@ export default function Side_Nav(){
     function logout() {
         //How to use Cookies in React -> https://youtu.be/Avfa7RrPx_Q
         //Removes the Tokens from their Respective Cookies
-        cookies.remove("organizaodor_token")
-        cookies.remove("organizaodor_nome")
+        cookies.remove("participante_token")
+        cookies.remove("participante_nome")
         //Navigates to Login Page
         navigate("/Login")
     }
@@ -29,7 +29,7 @@ export default function Side_Nav(){
                 </div>
                 <div className="sb-sidenav-footer">
                     <div className="small">Login:</div>
-                    <small>{cookies.get("organizaodor_nome")}</small>
+                    <small>{cookies.get("participante_nome")}</small>
                     <br/>
                     <button className="btn-danger" onClick={logout}>Logout</button>
                 </div>

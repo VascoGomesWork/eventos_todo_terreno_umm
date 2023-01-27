@@ -28,6 +28,7 @@ export default function Inscrever_Evento(){
     const [alert, setAlert] = useState(false)
     const [alertFailed, setAlertFailed] = useState(false)
     const cookies = new Cookies();
+    //participante_token, participante_nome
 
     useEffect(() => {
        fetch("//localhost:8000/api/eventos/show/" + id)

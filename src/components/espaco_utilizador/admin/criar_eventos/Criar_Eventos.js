@@ -36,14 +36,14 @@ export default function Criar_Eventos(){
         console.log("Localidade Fim = " + global.localidade_fim)
         console.log("Requisitos = " + global.requisitosEvento)
         console.log("Descrição = " + global.descricaoEvento)
-        console.log("Participante Cookie = " + cookies.get("participante_token"))
+        console.log("Participante Cookie = " + cookies.get("organizaodor_token"))
 
 
         fetch(`http://localhost:8000/api/eventos/store`, {
             method: 'POST',
             headers: {
                 /* Put Token Given in Login */
-                'Authorization': 'Bearer '+ cookies.get("participante_token"),
+                'Authorization': 'Bearer '+ cookies.get("organizaodor_token"),
                 'Content-Type': 'application/json;charset=utf-8',
                 "Access-Control-Allow-Origin": "*",
                 "Accept": "application/json"
