@@ -13,11 +13,13 @@ import Requisitos_Evento from "./Requisitos_Evento";
 import Image_Chooser from "./Image_Chooser";
 import Alert from "../../../Alert";
 import Nome_Evento from "./Nome_Evento";
+import Cookies from "universal-cookie";
 
 export default function Criar_Eventos(){
 
     const [alert, setAlert] = useState(false)
     const [alertFailed, setAlertFailed] = useState(false)
+    const cookies = new Cookies();
 
     function criarEvento() {
 
@@ -34,12 +36,14 @@ export default function Criar_Eventos(){
         console.log("Localidade Fim = " + global.localidade_fim)
         console.log("Requisitos = " + global.requisitosEvento)
         console.log("Descrição = " + global.descricaoEvento)
+        console.log("Participante Cookie = " + cookies.get("participante_token"))
+
 
         fetch(`http://localhost:8000/api/eventos/store`, {
             method: 'POST',
             headers: {
                 /* Put Token Given in Login */
-                'Authorization': 'Bearer '+ "1|WHkaA7qOeyxSS1wvgwcgHmppRib04AJwi0juuV6b",
+                'Authorization': 'Bearer '+ cookies.get("participante_token"),
                 'Content-Type': 'application/json;charset=utf-8',
                 "Access-Control-Allow-Origin": "*",
                 "Accept": "application/json"

@@ -14,6 +14,8 @@ import {useLocation} from "react-router-dom";
 import Requisitos_Evento from "./Requisitos_Evento";
 import Descricao_Evento from "./Descricao_Evento";
 import Form_Participante from "./Form_Participante";
+import Alert from "../../../Alert";
+import Cookies from "universal-cookie";
 
 
 
@@ -23,6 +25,9 @@ export default function Inscrever_Evento(){
     var id = useLocation().state;
 
     const [eventoAtributes, setEventosAtributes] = useState([])
+    const [alert, setAlert] = useState(false)
+    const [alertFailed, setAlertFailed] = useState(false)
+    const cookies = new Cookies();
 
     useEffect(() => {
        fetch("//localhost:8000/api/eventos/show/" + id)
@@ -33,6 +38,10 @@ export default function Inscrever_Evento(){
               setEventosAtributes(data)
           });
     }, []);
+
+    function inscreverEvento() {
+
+    }
 
     return(
 
@@ -80,7 +89,11 @@ export default function Inscrever_Evento(){
 
                             <Comentarios_Eventos eventosAtributes={eventoAtributes}/>
 
-
+                            <div id="criar_Evento">
+                                <button className="btn btn-primary" onClick={inscreverEvento}>Inscrever em Evento Todo-o-Terreno</button>
+                                {alertFailed && <Alert type="0" message="Preencha Todos os Campos"/>}
+                                {alert && <Alert type="1" message="Evento Criado com Sucesso"/>}
+                            </div>
                         </div>
                     </main>
 

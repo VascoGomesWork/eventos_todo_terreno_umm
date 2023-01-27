@@ -3,6 +3,9 @@ import Head from "./cliente/Head";
 import {Link, useNavigate} from "react-router-dom";
 import {useLocation} from "react-router-dom";
 import Alert from "../Alert";
+import Cookies from "universal-cookie";
+import jwt from "jwt-decode";
+
 
 export default function Login(){
 
@@ -11,7 +14,7 @@ export default function Login(){
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [alert, setAlert] = useState(false)
-
+    const cookies = new Cookies();
     //How to Pass Props to Link -> https://www.kindacode.com/article/react-router-passing-data-states-through-links/
 
     console.log("ID EVENTO LOGIN = " + useLocation().state)
@@ -40,9 +43,21 @@ export default function Login(){
 
             //Checks if it is a Participant or a Organizador
             if(parsedData.type === "participante"){
+
+                //How to Use Cookies to Store Tokens -> https://youtu.be/Avfa7RrPx_Q
+                //Sets Participants Cookies
+                cookies.set("participante_token", parsedData.token);
+                cookies.set("participante_nome", parsedData.user.nome);
+
                 //How to send data through navigate -> https://bobbyhadz.com/blog/react-onclick-redirectnpm
                 navigate("/Dashboard_Cliente", {state: eventoId})
             } else if(parsedData.type === "organizador"){
+
+                //How to Use Cookies to Store Tokens -> https://youtu.be/Avfa7RrPx_Q
+                //Sets Organizador Cookies
+                cookies.set("organizaodor_token", parsedData.token);
+                cookies.set("organizaodor_nome", parsedData.user.nome);
+
                 //How to send data through navigate -> https://bobbyhadz.com/blog/react-onclick-redirectnpm
                 navigate("/Dashboard_Admin", {state: eventoId})
             } else {

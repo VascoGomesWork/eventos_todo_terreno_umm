@@ -1,7 +1,20 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import Cookies from "universal-cookie";
 
 export default function Side_Nav(){
+
+    const navigate = useNavigate();
+    const cookies = new Cookies();
+
+    function logout() {
+        //How to use Cookies in React -> https://youtu.be/Avfa7RrPx_Q
+        //Removes the Tokens from their Respective Cookies
+        cookies.remove("organizaodor_token")
+        cookies.remove("organizaodor_nome")
+        //Navigates to Login Page
+        navigate("/Login")
+    }
 
     return(
 
@@ -15,8 +28,10 @@ export default function Side_Nav(){
                     </div>
                 </div>
                 <div className="sb-sidenav-footer">
-                    <div className="small">Logged in as:</div>
-                    Start Bootstrap
+                    <div className="small">Login:</div>
+                    <small>{cookies.get("organizaodor_nome")}</small>
+                    <br/>
+                    <button className="btn-danger" onClick={logout}>Logout</button>
                 </div>
             </nav>
         </div>
