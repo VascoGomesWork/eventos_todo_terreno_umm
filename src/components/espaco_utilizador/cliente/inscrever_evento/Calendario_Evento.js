@@ -41,13 +41,13 @@ export default function Calendario_Evento(props){
     let diaSemanaInicioPT = ""
     let diaSemanaFimPT = ""
 
-    /*console.log("Dia Inicio = " + diaInicio)
+    console.log("Dia Inicio = " + diaInicio)
     console.log("Mes Inicio = " + mesInicio)
     console.log("Ano Inicio = " + anoInicio)
 
     console.log("Dia Fim = " + diaFim)
     console.log("Mes Fim = " + mesFim)
-    console.log("Ano Fim = " + anoFim)*/
+    console.log("Ano Fim = " + anoFim)
 
     for (let j = 0; j < daysOfWeekEN.length; j++){
         console.log("DIa Semana Inicio  EN = " + diaSemanaInicio)
@@ -64,15 +64,20 @@ export default function Calendario_Evento(props){
     console.log("Dia Inicio Index = " + diaSemanaInicioPT)
     console.log("Dia Fim Index = " + diaSemanaFimPT)
 
-    const indices = function () {
-        let counter = 0;
+    /**
+     * Resume: Creates an Array to make the Map function Work
+     * @returns {[]}
+     */
+    let indicesArray = function () {
+        let array = []
         for(let k = 0; k < daysOfWeek.length; k++){
             if(daysOfWeek[k] !== diaSemanaInicioPT){
-                counter++
+               array.push("")
             }
         }
-        return counter - 1
+        return array
     };
+
     return(
         {/*-- Calendário -*/},
         <div class="card mb-4">
@@ -99,18 +104,20 @@ export default function Calendario_Evento(props){
 
                 <ul class="days">
 
-                    {/*indices().map((diaSemana => (
+                    {indicesArray().map((diaSemana => (
                         <li></li>
-                    )))*/}
+                    )))}
 
                     {days.map(day => (
-                        isActive !== 0 ? <li><span  className="active">{day}</span></li> : <li>{day}</li>
+                        day == diaInicio || day == diaFim ? <li><span  className="active">{day}</span></li> : <li>{day}</li>
                     ))}
                 </ul>
-            </div>
-            <div className="days">
-                <li><span className="active">__</span><small> -> Data de Início</small></li>
-                <li><span className="active">__</span><small> -> Data de Fim</small></li>
+                <div className="days">
+                    <div className="row">
+                        <li><span className="active">__</span><small> -> Data de Início</small></li>
+                        <li><span className="active">__</span><small> -> Data de Fim</small></li>
+                    </div>
+                </div>
             </div>
         </div>
     )
