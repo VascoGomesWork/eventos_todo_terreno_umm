@@ -1,7 +1,7 @@
 import React from "react";
 
 
-export default function Imagem_evento(){
+export default function Imagem_evento(props){
 
     return(
 
@@ -9,10 +9,10 @@ export default function Imagem_evento(){
             <div className="card mb-4">
                 <div className="card-header">
                     <i className="fas fa-image me-1"></i>
-                    Passeio Todo-o-Terreno
+                    Passeio Todo-o-Terreno - {props.nome}
                 </div>
                 <div className="card-body">
-                    <img id="imagem_evento" src="../../Eventos_UMM_Home/startbootstrap-creative-gh-pages/assets/img/UMM/umm1.jpg"/>
+                    <img id="imagem_evento" src={"../../img/" + props.imagem}/>
                 </div>
             </div>
         </div>

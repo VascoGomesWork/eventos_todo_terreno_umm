@@ -1,6 +1,9 @@
 import React from "react";
 
-export default function Localizacao_Evento(){
+export default function Localizacao_Evento(props){
+
+    console.log("Localidade Inicio = " + props.localizacao_inicio)
+    console.log("Localidade Fim = " + props.localizacao_fim)
 
     return(
         {/*-- Localização Evento Todos-o-TErreno --*/},

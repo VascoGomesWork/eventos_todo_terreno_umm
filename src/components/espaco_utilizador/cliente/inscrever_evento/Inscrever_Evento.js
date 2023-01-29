@@ -72,16 +72,15 @@ export default function Inscrever_Evento(){
 
 
                             <div class="row">
+                                <Imagem_evento imagem={eventoAtributes[0].imagem} nome={eventoAtributes[0].nome}/>
 
-                                <Imagem_evento iamgem={eventoAtributes.imagem}/>
-
-                                <Descricao_Evento descricao={eventoAtributes.descricao}/>
-
-                                <Requisitos_Evento requisitos={eventoAtributes.requisitos}/>
+                                <Requisitos_Evento requisitos={eventoAtributes[0].requisitos}/>
 
                             </div>
 
-                            <Localizacao_Evento localizacao={[eventoAtributes.localidade_inicio, eventoAtributes.pontos_passagem, eventoAtributes.localidade_fim]}/>
+                            <Descricao_Evento descricao={eventoAtributes[0].descricao}/>
+
+                            <Localizacao_Evento localizacao_inicio={eventoAtributes[0].localidade_inicio} localizacao_fim={eventoAtributes[0].localidade_fim}/>
 
                             {/* FIX */}
                             <Calendario_Evento eventosAtributes={eventoAtributes}/>
