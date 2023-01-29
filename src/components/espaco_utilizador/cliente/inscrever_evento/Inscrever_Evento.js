@@ -25,18 +25,35 @@ export default function Inscrever_Evento(){
     var id = useLocation().state;
 
     const [eventoAtributes, setEventosAtributes] = useState([])
+    const [nome, setNome] = useState("")
+    const [imagem, setImagem] = useState("")
+    const [requisitos, setRequisitos] = useState("")
+    const [descricao, setDescricao] = useState("")
+    const [localidadeInicio, setLocalidadeInicio] = useState("")
+    const [localidadeFim, setLocalidadeFim] = useState("")
+    const [dataInicio, setDataInicio] = useState("")
+    const [dataFim, setDataFim] = useState("")
     const [alert, setAlert] = useState(false)
     const [alertFailed, setAlertFailed] = useState(false)
     const cookies = new Cookies();
     //participante_token, participante_nome
 
-    useEffect(() => {
+    React.useEffect(() => {
+
        fetch("//localhost:8000/api/eventos/show/" + id)
           .then((res) => res.json())
           .then((data) => {
               console.log("Eventos DATA = " + JSON.stringify(data))
               //Sets Eventos Atributes with variable Data
               setEventosAtributes(data)
+              setImagem(data[0].imagem)
+              setNome(data[0].nome)
+              setRequisitos(data[0].requisitos)
+              setDescricao(data[0].descricao)
+              setLocalidadeInicio(data[0].localidade_inicio)
+              setLocalidadeFim(data[0].localidade_fim)
+              setDataInicio(data[0].data_inicio)
+              setDataFim(data[0].data_fim)
           });
     }, []);
 
@@ -72,18 +89,18 @@ export default function Inscrever_Evento(){
 
 
                             <div class="row">
-                                <Imagem_evento imagem={eventoAtributes[0].imagem} nome={eventoAtributes[0].nome}/>
+                                <Imagem_evento imagem={imagem} nome={nome}/>
 
-                                <Requisitos_Evento requisitos={eventoAtributes[0].requisitos}/>
+                                <Requisitos_Evento requisitos={requisitos}/>
 
                             </div>
 
-                            <Descricao_Evento descricao={eventoAtributes[0].descricao}/>
+                            <Descricao_Evento descricao={descricao}/>
 
-                            <Localizacao_Evento localizacao_inicio={eventoAtributes[0].localidade_inicio} localizacao_fim={eventoAtributes[0].localidade_fim}/>
+                            <Localizacao_Evento localizacao_inicio={localidadeInicio} localizacao_fim={localidadeFim}/>
 
                             {/* FIX */}
-                            <Calendario_Evento eventosAtributes={eventoAtributes}/>
+                            <Calendario_Evento data_inicio={dataInicio} data_fim={dataFim}/>
 
                             <Form_Participante />
 
