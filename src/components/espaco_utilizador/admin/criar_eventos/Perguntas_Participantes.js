@@ -16,7 +16,7 @@ export default function Perguntas_Participantes(){
     return(
         <div className="card mb-4">
             <div className="card-header">
-                <i className="fas fa-calendar me-1"></i>
+                <i className="fas fa-date me-1"></i>
                 Perguntas aos Participantes
             </div>
             <div className="card-body">
@@ -24,7 +24,7 @@ export default function Perguntas_Participantes(){
                     <label>Pergunta Relacionada com o Evento</label>
                 </div>
                 <div className="row">
-                    <div className="col-md-10">
+                    <div className="col-md-9">
                         <input className="form-control" type="text" onChange={(e) => setPerguntaParticipante2(e.target.value)}/>
                     </div>
                 </div>

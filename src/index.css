@@ -11535,6 +11535,12 @@ body {font-family: Verdana, sans-serif;}
   color: white !important
 }
 
+.days li .deactive {
+  padding: 5px;
+  background: #bc1a28;
+  color: white !important
+}
+
 #eventos_row{
   margin: 2%;
 }
