@@ -16,6 +16,7 @@ import Descricao_Evento from "./Descricao_Evento";
 import Form_Participante from "./Form_Participante";
 import Alert from "../../../Alert";
 import Cookies from "universal-cookie";
+import Comentarios_Evento from "./Comentarios_Evento";
 
 
 
@@ -25,6 +26,7 @@ export default function Inscrever_Evento(){
     var id = useLocation().state;
 
     const [eventoAtributes, setEventosAtributes] = useState([])
+    const [eventoId, setEventoId] = useState("")
     const [nome, setNome] = useState("")
     const [imagem, setImagem] = useState("")
     const [requisitos, setRequisitos] = useState("")
@@ -33,6 +35,13 @@ export default function Inscrever_Evento(){
     const [localidadeFim, setLocalidadeFim] = useState("")
     const [dataInicio, setDataInicio] = useState("")
     const [dataFim, setDataFim] = useState("")
+    const [perguntaEvento1, setPerguntaEvento1] = useState("")
+    const [perguntaEvento2, setPerguntaEvento2] = useState("")
+    const [perguntaEvento3, setPerguntaEvento3] = useState("")
+    const [perguntaParticipante1, setPerguntaParticipante1] = useState("")
+    const [perguntaParticipante2, setPerguntaParticipante2] = useState("")
+    const [comentariosEventoList, setComentariosEventoList] = useState("")
+    let conentariosArray = []
     const [alert, setAlert] = useState(false)
     const [alertFailed, setAlertFailed] = useState(false)
     const cookies = new Cookies();
@@ -46,6 +55,7 @@ export default function Inscrever_Evento(){
               console.log("Eventos DATA = " + JSON.stringify(data))
               //Sets Eventos Atributes with variable Data
               setEventosAtributes(data)
+              setEventoId(data[0].id)
               setImagem(data[0].imagem)
               setNome(data[0].nome)
               setRequisitos(data[0].requisitos)
@@ -54,11 +64,66 @@ export default function Inscrever_Evento(){
               setLocalidadeFim(data[0].localidade_fim)
               setDataInicio(data[0].data_inicio)
               setDataFim(data[0].data_fim)
+              setPerguntaEvento1(data[0].pergunta_evento_1)
+              setPerguntaEvento2(data[0].pergunta_evento_2)
+              setPerguntaEvento3(data[0].pergunta_evento_3)
+              setPerguntaParticipante1(data[0].pergunta_participante_1)
+              setPerguntaParticipante2(data[0].pergunta_participante_2)
+              for (let k = 1; k < data.length; k++){
+                  conentariosArray.push(data[k].comentario)
+              }
+              setComentariosEventoList(conentariosArray)
           });
     }, []);
 
     function inscreverEvento() {
+        fetch(`http://localhost:8000/api/inscrever_eventos/store`, {
+            method: 'POST',
+            headers: {
+                /* Put Token Given in Login */
+                'Authorization': 'Bearer '+ cookies.get("participante_token"),
+                'Content-Type': 'application/json;charset=utf-8',
+                "Access-Control-Allow-Origin": "*",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                "resposta_evento_1": global.respostaEvento1,
+                "resposta_evento_2": global.respostaEvento2,
+                "resposta_evento_3": global.respostaEvento3,
+                "resposta_participante_1": global.respostaParticipante1,
+                "resposta_participante_2": global.respostaParticipante2,
+                "id_participante_fk": cookies.get("participante_id"),
+                "id_evento_fk": eventoId,
+                "comentario": global.comentario,
+                "id_organizador_fk": 1
+            }), // body data type must match "Content-Type" header
+        }).then((response) => {
+            return response.json();
+        }).then((parsedData) => {
+            console.log("Parsed Data = " + JSON.stringify(parsedData))
 
+            //Failed to Create an Event
+            if(parsedData.errors || parsedData.message === "Unauthenticated."){
+                //Sets Alert
+                setAlertFailed(prevState => !prevState)
+
+                //Makes Alert Disapear
+                setTimeout(() => {
+                    setAlertFailed(prevState => !prevState)
+                }, 3000)
+            } else {
+
+                //Sets Alert
+                setAlert(prevState => !prevState)
+
+                //Makes Alert Disapear
+                setTimeout(() => {
+                    setAlert(prevState => !prevState)
+                }, 3000)
+
+            }
+
+        })
     }
 
     return(
@@ -102,9 +167,9 @@ export default function Inscrever_Evento(){
                             {/* FIX */}
                             <Calendario_Evento data_inicio={dataInicio} data_fim={dataFim}/>
 
-                            <Form_Participante />
+                            <Form_Participante perguntaEvento1={perguntaEvento1} perguntaEvento2={perguntaEvento2} perguntaEvento3={perguntaEvento3} perguntaParticipante1={perguntaParticipante1} perguntaParticipante2={perguntaParticipante2}/>
 
-                            <Comentarios_Eventos eventosAtributes={eventoAtributes}/>
+                            <Comentarios_Evento comentariosEvento={comentariosEventoList}/>
 
                             <div id="criar_Evento">
                                 <button className="btn btn-primary" onClick={inscreverEvento}>Inscrever em Evento Todo-o-Terreno</button>

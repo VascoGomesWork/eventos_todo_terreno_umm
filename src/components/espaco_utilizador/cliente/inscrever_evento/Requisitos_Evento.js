@@ -3,9 +3,6 @@ import React from "react";
 
 export default function Requisitos_Evento(props){
 
-    //console.log("Eventos Atributes in Requisitos Eventos = " + props.requisitos)
-    //console.log("EVENTOS ATRIBUTES TESTE")
-
     return(
         <div className="col-xl-6">
             <div className="card mb-4">

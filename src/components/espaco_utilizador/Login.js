@@ -48,6 +48,7 @@ export default function Login(){
                 //Sets Participants Cookies
                 cookies.set("participante_token", parsedData.token);
                 cookies.set("participante_nome", parsedData.user.nome);
+                cookies.set("participante_id", parsedData.user.id);
 
                 //How to send data through navigate -> https://bobbyhadz.com/blog/react-onclick-redirectnpm
                 navigate("/Dashboard_Cliente", {state: eventoId})
@@ -57,6 +58,7 @@ export default function Login(){
                 //Sets Organizador Cookies
                 cookies.set("organizaodor_token", parsedData.token);
                 cookies.set("organizaodor_nome", parsedData.user.nome);
+                cookies.set("organizaodor_id", parsedData.user.id);
 
                 //How to send data through navigate -> https://bobbyhadz.com/blog/react-onclick-redirectnpm
                 navigate("/Dashboard_Admin", {state: eventoId})

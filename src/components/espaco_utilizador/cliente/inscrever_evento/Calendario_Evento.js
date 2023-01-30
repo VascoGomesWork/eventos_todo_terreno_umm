@@ -41,17 +41,7 @@ export default function Calendario_Evento(props){
     let diaSemanaInicioPT = ""
     let diaSemanaFimPT = ""
 
-    console.log("Dia Inicio = " + diaInicio)
-    console.log("Mes Inicio = " + mesInicio)
-    console.log("Ano Inicio = " + anoInicio)
-
-    console.log("Dia Fim = " + diaFim)
-    console.log("Mes Fim = " + mesFim)
-    console.log("Ano Fim = " + anoFim)
-
     for (let j = 0; j < daysOfWeekEN.length; j++){
-        console.log("DIa Semana Inicio  EN = " + diaSemanaInicio)
-        console.log("DAys of Week = " + daysOfWeekEN[j])
         if(diaSemanaInicio === daysOfWeekEN[j]){
             diaSemanaInicioPT = daysOfWeek[j]
         }
@@ -60,9 +50,6 @@ export default function Calendario_Evento(props){
             diaSemanaFimPT = daysOfWeek[j]
         }
     }
-
-    console.log("Dia Inicio Index = " + diaSemanaInicioPT)
-    console.log("Dia Fim Index = " + diaSemanaFimPT)
 
     /**
      * Resume: Creates an Array to make the Map function Work
