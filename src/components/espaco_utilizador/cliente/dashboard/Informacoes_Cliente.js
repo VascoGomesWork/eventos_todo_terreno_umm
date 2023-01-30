@@ -14,7 +14,8 @@ export default function Informacoes_CLiente(){
             .then((res) => res.json())
             .then((data) => {
                 setCount(data)
-            }, [])});
+            }, [])
+    });
 
     return(
 

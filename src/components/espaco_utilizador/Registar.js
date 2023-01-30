@@ -1,11 +1,14 @@
 import React, {useState} from "react";
 import Head from "./cliente/Head";
 import {Link} from "react-router-dom";
+import Alert from "../Alert";
 
 export default function Registar(){
 
     const [nome, setNome] = useState("")
     const [email, setEmail] = useState("")
+    const [alert, setAlert] = useState(false)
+    const [badAlert, setBadAlert] = useState(false)
     const [password, setPassword] = useState("")
     const [repeatPasword, setRepeatPassword] = useState("")
 
@@ -21,7 +24,7 @@ export default function Registar(){
         if(password === repeatPasword){
 
 
-            fetch(`http://localhost:8000/api/participante/store`, {
+            fetch(`http://localhost:8000/api/registar`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8',
@@ -39,6 +42,25 @@ export default function Registar(){
             }).then((parsedData) => {
                 console.log("DATA = " + JSON.stringify(parsedData))
                 //setAlert(prevState => !prevState)
+
+                if(parsedData.errors !== undefined && password !== repeatPasword) {
+
+                    //Sets Alert
+                    setBadAlert(prevState => !prevState)
+
+                    //Makes Alert Disapear
+                    setTimeout(() => {
+                        setBadAlert(prevState => !prevState)
+                    }, 3000)
+                } else {
+                    //Sets Alert
+                    setAlert(prevState => !prevState)
+
+                    //Makes Alert Disapear
+                    setTimeout(() => {
+                        setAlert(prevState => !prevState)
+                    }, 3000)
+                }
             })
 
         }
@@ -86,6 +108,8 @@ export default function Registar(){
                                                     className="d-flex align-items-center justify-content-between ">
                                                     <a className="btn btn-primary" onClick={registarParticipante}>Efetuar Registo</a>
                                                 </div>
+                                                {badAlert && <Alert type="0" message="Dados de Login Incorretos"/>}
+                                                {alert && <Alert type="1" message="Registo Efetuado com Sucesso"/>}
                                             </form>
                                         </div>
                                         <div className="card-footer text-center py-3">

@@ -92,9 +92,9 @@ export default function Detalhes_Eventos(){
 
                     <Comentarios_Evento comentariosEvento={comentariosEventoList} inscreverEvento={0}/>
 
-                    <div className="row">
-                        <h5>Para se Inscrever no evento, faça login no <Link to={'../Login'} state={eventoId} class="nav-link" title="Project Name">Espaço do Utilizador</Link> com a sua conta</h5>
-                    </div>
+                    {/* How to Keep Text in the Same Line -> https://stackoverflow.com/questions/26951488/how-do-i-keep-my-text-and-my-link-on-the-same-line-in-html */}
+                    <h5 id="display">Para se Inscrever no evento, faça login no <Link id="display" to={'../Login'} state={eventoId} class="nav-link" title="Project Name">Espaço do Utilizador</Link> com a sua conta</h5>
+
                 </div>
             </div>
 

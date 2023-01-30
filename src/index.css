@@ -11556,3 +11556,7 @@ body {font-family: Verdana, sans-serif;}
 #passeio_todo_o_terreno{
   margin-top: 10%;
 }
+
+#display{
+  display: inline-block;
+ }
