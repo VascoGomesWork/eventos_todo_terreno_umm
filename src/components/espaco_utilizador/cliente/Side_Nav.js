@@ -12,6 +12,7 @@ export default function Side_Nav(){
         //Removes the Tokens from their Respective Cookies
         cookies.remove("participante_token")
         cookies.remove("participante_nome")
+        cookies.remove("participante_id")
         //Navigates to Login Page
         navigate("/Login")
     }

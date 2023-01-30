@@ -20,44 +20,15 @@ export default function Perguntas_Participantes(){
                 Perguntas aos Participantes
             </div>
             <div className="card-body">
-                <div className="col-md-5">
-                    <label>Pergunta Relacionada com o Evento</label>
-                </div>
-                <div className="row">
-                    <div className="col-md-9">
-                        <input className="form-control" type="text" onChange={(e) => setPerguntaParticipante2(e.target.value)}/>
-                    </div>
-                </div>
-                <div className="col-md-5">
-                    <label>Pergunta Relacionada com Participante</label>
-                </div>
-                <div className="row">
 
-                    <div className="col-md-10">
-                        <input className="form-control" type="text" onChange={(e) => setPerguntaEvento1(e.target.value)}/>
-                    </div>
-                </div>
+                <label>Pergunta Relacionada com o Evento</label>
+                <input className="form-control" type="text" onChange={(e) => setPerguntaEvento1(e.target.value)}/>
+                <input className="form-control" type="text" onChange={(e) => setPerguntaEvento2(e.target.value)}/>
+                <input className="form-control" type="text" onChange={(e) => setPerguntaEvento3(e.target.value)}/>
 
-                <div className="row">
-                    <div className="col-md-10">
-                        <input className="form-control" type="text" onChange={(e) => setPerguntaEvento2(e.target.value)}/>
-                    </div>
-                </div>
-
-                <div className="col-md-5">
-                    <label>Pergunta Relacionada com Inscrição no Evento Participante</label>
-                </div>
-                <div className="row">
-                    <div className="col-md-10">
-                        <input className="form-control" type="text" onChange={(e) => setPerguntaEvento3(e.target.value)}/>
-                    </div>
-                </div>
-
-                <div className="row">
-                    <div className="col-md-10">
-                        <input className="form-control" type="text" onChange={(e) => setPerguntaParticipante1(e.target.value)}/>
-                    </div>
-                </div>
+                <label>Pergunta Relacionada com o Participantes</label>
+                <input className="form-control" type="text" onChange={(e) => setPerguntaParticipante1(e.target.value)}/>
+                <input className="form-control" type="text" onChange={(e) => setPerguntaParticipante2(e.target.value)}/>
             </div>
         </div>
     )

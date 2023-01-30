@@ -164,17 +164,16 @@ export default function Inscrever_Evento(){
 
                             <Localizacao_Evento localizacao_inicio={localidadeInicio} localizacao_fim={localidadeFim}/>
 
-                            {/* FIX */}
                             <Calendario_Evento data_inicio={dataInicio} data_fim={dataFim}/>
 
                             <Form_Participante perguntaEvento1={perguntaEvento1} perguntaEvento2={perguntaEvento2} perguntaEvento3={perguntaEvento3} perguntaParticipante1={perguntaParticipante1} perguntaParticipante2={perguntaParticipante2}/>
 
-                            <Comentarios_Evento comentariosEvento={comentariosEventoList}/>
+                            <Comentarios_Evento comentariosEvento={comentariosEventoList} inscreverEvento={1}/>
 
                             <div id="criar_Evento">
                                 <button className="btn btn-primary" onClick={inscreverEvento}>Inscrever em Evento Todo-o-Terreno</button>
                                 {alertFailed && <Alert type="0" message="Preencha Todos os Campos"/>}
-                                {alert && <Alert type="1" message="Evento Criado com Sucesso"/>}
+                                {alert && <Alert type="1" message="Inscreveu-se no Evento com Sucesso"/>}
                             </div>
                             <br/>
                         </div>

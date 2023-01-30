@@ -35,8 +35,10 @@ export default function Comentarios_Evento(props){
                             </div>
                         </div>
                         {/*-- Comment form--*/}
-                        <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Faça um Comentário Acerca do Evento" onChange={(e) => setComentario(e.target.value)}></textarea></form>
-                    </div>
+                        {props.inscreverEvento !== 0 ?
+                            <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Faça um Comentário Acerca do Evento" onChange={(e) => setComentario(e.target.value)}></textarea></form>
+                            : <div></div>}
+                        </div>
                 </div>
             </section>
 

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Head from "./cliente/Head";
 import {Link, useNavigate} from "react-router-dom";
 import {useLocation} from "react-router-dom";
@@ -20,6 +20,14 @@ export default function Login(){
     console.log("ID EVENTO LOGIN = " + useLocation().state)
     //Sets Evento ID to Be used
     eventoId = useLocation().state
+
+    useEffect(() => {
+        //Checks if User is already logged in
+        console.log("Cookies = " + cookies.get("participante_id"))
+        if(cookies.get("participante_id") !== undefined){
+            navigate("/Dashboard_Cliente", {state: eventoId})
+        }
+    })
 
     function efetuarLogin(){
 

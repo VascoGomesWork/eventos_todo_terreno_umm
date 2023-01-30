@@ -7,9 +7,9 @@ export default function Informacoes_CLiente(){
 
         <main>
             <div className="container-fluid px-4">
-                <h1 className="mt-4">Cliente Dashboard</h1>
+                <h1 className="mt-4">Participante Dashboard</h1>
                 <ol className="breadcrumb mb-4">
-                    <li className="breadcrumb-item active">Este é o Dashboard do Cliente</li>
+                    <li className="breadcrumb-item active">Este é o Dashboard dos Participantes</li>
                 </ol>
                 <div className="row">
                     <div className="col-xl-3 col-md-6">

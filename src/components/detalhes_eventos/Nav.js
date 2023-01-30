@@ -7,14 +7,14 @@ export default function Nav(){
         {/*-- Navigation--*/},
             <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
                 <div class="container px-4 px-lg-5">
-                    <Link to={"/"} class="navbar-brand" ><img src="../../img/umm_logo2.jpg"/>Eventos Todo o Terreno UMM</Link>
+                    <Link to={"/"} class="navbar-brand" ><img src="../../img/umm_logo2.jpg"/> Eventos Todo o Terreno UMM</Link>
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ms-auto my-2 my-lg-0">
                             <li class="nav-item"><a class="nav-link" href="#passeio_todo_o_terreno">Detalhes do Passeio Todo-o-Terreno</a></li>
                             <li class="nav-item"><a class="nav-link" href="#forum_mensagens">Fórum de Mensagens</a></li>
                             {/* TODO - Send Event ID to Login */}
-                            <li class="nav-item"><Link to={'../Login'} class="nav-link" title="Project Name">Espaço do Utilizador</Link></li>
+                            <li class="nav-item"><Link to={'../Login'} state={global.eventoId} class="nav-link" title="Project Name">Espaço do Utilizador</Link></li>
                     </ul>
                 </div>
             </div>
