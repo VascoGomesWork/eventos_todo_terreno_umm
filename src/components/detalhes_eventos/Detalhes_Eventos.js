@@ -80,10 +80,10 @@ export default function Detalhes_Eventos(){
                         <Requisitos_Evento requisitos={requisitos}/>
 
 
-                    <Calendario_Evento data_inicio={dataInicio} data_fim={dataFim}/>
+                    <Descricao_Evento descricao={descricao}/>
 
                     <div className="col-md-6">
-                        <Descricao_Evento descricao={descricao}/>
+                        <Calendario_Evento data_inicio={dataInicio} data_fim={dataFim}/>
                     </div>
 
                     <div className="col-md-6">
