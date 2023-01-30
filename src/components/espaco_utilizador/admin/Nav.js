@@ -6,7 +6,7 @@ export default function Nav(){
         <nav className="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             {/*-- Navbar Brand--*/}
             <div>
-                <a className="navbar-brand ps-3" href="admin_index.html"><img
+                <a className="navbar-brand ps-3" href="/Dashboard_Admin"><img
                     src="../../img/umm_logo2.jpg"/> Espaço
                     do Utilizador</a>
             </div>

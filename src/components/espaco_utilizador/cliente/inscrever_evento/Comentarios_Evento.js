@@ -20,6 +20,7 @@ export default function Comentarios_Evento(props){
                         <div className="d-flex mb-4">
                             <div className="flex-shrink-0">
                                 {typeof(props.comentariosEvento) === typeof([]) ? props.comentariosEvento.map((comentario) => (
+
                                     <div className="d-flex">
                                         <div className="flex-shrink-0"><img className="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..."/></div>
                                         <div className="ms-3">

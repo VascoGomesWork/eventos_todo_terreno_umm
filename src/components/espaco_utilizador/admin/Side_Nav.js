@@ -23,6 +23,7 @@ export default function Side_Nav(){
                     <div className="nav">
                         <div className="sb-sidenav-menu-heading">Operações do Sistema</div>
                         <Link to={"/Criar_Eventos"} className="nav-link" >Criar Eventos</Link>
+                        <Link to={"/"} className="nav-link" >Voltar á Página Inicial</Link>
                     </div>
                 </div>
                 <div className="sb-sidenav-footer">
