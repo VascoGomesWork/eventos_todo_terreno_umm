@@ -18,16 +18,21 @@ export default function Comentarios_Evento(props){
                     </div>
                     <div class="card-body">
                         <div className="d-flex mb-4">
-                            {[props.comentariosEvento].map((comentario) => (
-                                <div>
-                                    <div className="flex-shrink-0">
-                                        <img className="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..."/>
+                            <div className="flex-shrink-0">
+                                {typeof(props.comentariosEvento) === typeof([]) ? props.comentariosEvento.map((comentario) => (
+                                    <div className="d-flex">
+                                        <div className="flex-shrink-0"><img className="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..."/></div>
                                         <div className="ms-3">
-                                            <p>{comentario}</p>
+                                            <div className="fw-bold">Commenter Name</div>
+                                            {comentario}
                                         </div>
                                     </div>
-                                </div>
-                            ))}
+                                )) :
+                                    <div className="d-flex">
+                                        <div className="fw-bold">Não Existem Comentários Acerca Deste Evento!</div>
+                                    </div>
+                                }
+                            </div>
                         </div>
                         {/*-- Comment form--*/}
                         <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Faça um Comentário Acerca do Evento" onChange={(e) => setComentario(e.target.value)}></textarea></form>

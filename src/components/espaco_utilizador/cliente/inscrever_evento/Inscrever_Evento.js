@@ -176,6 +176,7 @@ export default function Inscrever_Evento(){
                                 {alertFailed && <Alert type="0" message="Preencha Todos os Campos"/>}
                                 {alert && <Alert type="1" message="Evento Criado com Sucesso"/>}
                             </div>
+                            <br/>
                         </div>
                     </main>
 
