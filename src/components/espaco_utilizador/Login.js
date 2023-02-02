@@ -17,6 +17,10 @@ export default function Login(){
     const cookies = new Cookies();
     //How to Pass Props to Link -> https://www.kindacode.com/article/react-router-passing-data-states-through-links/
 
+    /*if(useLocation().state === 0){
+        console.log("ORGANIZADOR")
+    }*/
+
     console.log("ID EVENTO LOGIN = " + useLocation().state)
     //Sets Evento ID to Be used
     eventoId = useLocation().state
@@ -24,7 +28,7 @@ export default function Login(){
     useEffect(() => {
         //Checks if User is already logged in
         console.log("Cookies = " + cookies.get("participante_id"))
-        if(cookies.get("participante_id") !== undefined){
+        if(cookies.get("participante_id") !== undefined && eventoId !== 0){
             navigate("/Dashboard_Cliente", {state: eventoId})
         }
     })
