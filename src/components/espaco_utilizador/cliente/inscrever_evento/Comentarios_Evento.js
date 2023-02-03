@@ -27,7 +27,7 @@ export default function Comentarios_Evento(props){
                                     <div className="d-flex">
                                         <div className="flex-shrink-0"><img className="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..."/></div>
                                         <div className="ms-3">
-                                            <div className="fw-bold">Commenter Name</div>
+                                            <div className="fw-bold">O Utilizador</div>
                                             {comentario}
                                         </div>
                                     </div>
