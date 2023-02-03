@@ -5,6 +5,9 @@ export default function Comentarios_Evento(props){
 
     const [comentario, setComentario] = useState("")
     console.log("COmentarios Props = " + JSON.stringify(props.comentariosEvento))
+    //console.log("Comentario = " + global.comentario.length)
+    console.log("Comentario 2 = " + global.comentario)
+    global.comentario = ""
     global.comentario = comentario
 
     return(

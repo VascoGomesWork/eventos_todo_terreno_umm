@@ -94,7 +94,7 @@ export default function Inscrever_Evento(){
                 "resposta_participante_2": global.respostaParticipante2,
                 "id_participante_fk": cookies.get("participante_id"),
                 "id_evento_fk": eventoId,
-                "comentario": global.comentario,
+                "comentario": global.comentario.length <= 0 ? "_" : global.comentario,
                 "id_organizador_fk": 1
             }), // body data type must match "Content-Type" header
         }).then((response) => {

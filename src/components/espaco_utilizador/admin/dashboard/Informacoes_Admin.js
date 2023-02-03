@@ -25,7 +25,7 @@ export default function Informacoes_Admin(){
             <div className="row">
                 <div className="col-xl-3 col-md-6">
                     <div className="card bg-primary text-white mb-4">
-                        <div className="card-body">Eventos Inscritos: {count}</div>
+                        <div className="card-body">Eventos Criados: {count}</div>
                         <div className="card-footer d-flex align-items-center justify-content-between">
                             <div className="small text-white"><i className="fas fa-angle-right"></i></div>
                         </div>
