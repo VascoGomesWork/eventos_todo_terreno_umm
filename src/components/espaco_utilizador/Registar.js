@@ -113,8 +113,9 @@ export default function Registar(){
                                             </form>
                                         </div>
                                         <div className="card-footer text-center py-3">
-                                            <div className="small"><h5>Já tem conta? Realize o <Link to={'../Login'} class="nav-link" title="Project Name">Login</Link> no Espaço do Utilizador</h5>
-                                            </div>
+                                            <div className="small"><h5>Já tem conta? Realize o <Link to={'../Login'} class="nav-link" title="Project Name">Login</Link> no Espaço do Utilizador</h5></div>
+                                            <div className="small"><h5>Quer ver Todos os Eventos? Volte para a <Link to={'/'} class="nav-link" title="Project Name">Página Inicial</Link>
+                                            </h5></div>
                                         </div>
                                     </div>
                                 </div>

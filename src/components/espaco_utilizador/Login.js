@@ -119,7 +119,8 @@ export default function Login(){
                                             </form>
                                         </div>
                                         <div class="card-footer text-center py-3">
-                                            <div class="small"><h5>Ainda não tem conta? Realize o  <Link to={'../Registar'} class="nav-link" title="Project Name">Registo</Link> no Espaço do Utilizador</h5></div>
+                                            <div  class="small"><h5>Ainda não tem conta? Realize o  <Link to={'../Registar'} class="nav-link" title="Project Name">Registo</Link> no Espaço do Utilizador</h5></div>
+                                            <div class="small"><h5>Quer ver Todos os Eventos? Volte para a  <Link to={'/'} class="nav-link" title="Project Name">Página Inicial</Link></h5></div>
                                         </div>
                                     </div>
                                 </div>

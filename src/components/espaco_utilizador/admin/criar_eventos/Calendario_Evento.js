@@ -7,11 +7,20 @@ export default function Calendario_Evento(){
     var date = (new Date().toLocaleDateString().substr(0, 10)).replace("/", "-").replace("/", "-")
     var finalDate = date.substr(6) + "-" + date.substr(3,5)
 
-    const [dataInicio, setDataInicio] = useState(finalDate)
-    const [dataFim, setDataFim] = useState(finalDate)
-    global.data_inicio = dataInicio
-    global.data_fim = dataFim
 
+    const dataHoje = (useState(finalDate) + "").substr(8, 2) + "/" + (useState(finalDate) + "").substr(5, 2) + "/" + (useState(finalDate) + "").substr(0, 4)
+    //console.log("Data Hoje = " + dataHoje)
+    const [dataInicio, setDataInicio] = useState(dataHoje)
+    const [dataFim, setDataFim] = useState(dataHoje)
+
+    /*console.log("DATA INICIO = " + dataInicio)
+    console.log("Dia = " + (dataInicio).substr(8, 2))
+    console.log("Mês = " + (dataInicio).substr(5, 2))
+    console.log("Ano = " + (dataInicio) + "".substr(0, 4))*/
+    global.data_inicio = (dataInicio).substr(8, 2) + "/" + (dataInicio).substr(5, 2) + "/" + (dataInicio).substr(0, 4)
+    global.data_fim = (dataFim).substr(8, 2) + "/" + (dataFim).substr(5, 2) + "/" + (dataFim).substr(0, 4)
+
+    //console.log("DATA INICIO GLOBAL = " + global.data_inicio)
 
     return(
         {/*-- Calendário --*/},
