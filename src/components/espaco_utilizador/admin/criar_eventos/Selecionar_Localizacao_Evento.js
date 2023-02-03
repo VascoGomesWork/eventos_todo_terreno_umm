@@ -46,7 +46,34 @@ export default function Selecionar_Localizacao_Evento(){
                 <ol className="breadcrumb mb-4">
                     <li className="breadcrumb-item active">Selecione a localização do evento utilizando as caixas de seleção abaixo</li>
                 </ol>
-                {/* How to use HERE Maps - https://developer.here.com/tutorials/getting-here-credentials/ */}
+
+                <div className="row">
+                    <div className="col-md-6">
+                        <label>Localidade Inicio</label>
+
+                        <select className="form-select" name="localidade_inicio" id="localidade_inicio" onChange={(e) => definirLocalidadeInicio(e)}>
+                            <option value="">Selecione uma Localidade de Início</option>
+                            {localidadeInicioEventoList.map((localidadeInicio) => (
+                                //console.log("Localidade Inicio = " + JSON.stringify(localidadeInicio)),
+                                <option value={localidadeInicio.id}>{localidadeInicio.nome}</option>
+                            ))}
+
+                        </select>
+                    </div>
+
+                    <div className="col-md-6">
+                        <label>Localidade Fim</label>
+
+                        <select className="form-select" name="localidade_fim" id="localidade_fim" onChange={(e) => definirLocalidadeFim(e)}>
+                            <option value="">Selecione uma Localidade de Fim</option>
+                            {localidadeFimEventoList.map((localidadeFim) => (
+                                //console.log("Localidade Inicio = " + JSON.stringify(localidadeFim)),
+                                <option value={localidadeFim.id}>{localidadeFim.nome}</option>
+                            ))}
+                        </select>
+                    </div>
+                </div>
+                <br/>
                 <div className="google-map-code">
 
                     {/* Sem Direções */}
@@ -75,32 +102,7 @@ export default function Selecionar_Localizacao_Evento(){
                     {localidadeInicioEvento === "6" && localidadeFimEvento === "Poça das Lesmas, Seixal(Madeira)" && <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1fAJQwTlCA383VSmemOj5JHfez9OYfDg&ehbc=2E312F" width="100%" height="480"></iframe>}
                     <br/>
 
-                    <div className="row">
-                        <div className="col-md-6">
-                            <label>Localidade Inicio</label>
 
-                            <select className="form-select" name="localidade_inicio" id="localidade_inicio" onChange={(e) => definirLocalidadeInicio(e)}>
-                                <option value="">Selecione uma Localidade de Início</option>
-                                {localidadeInicioEventoList.map((localidadeInicio) => (
-                                    //console.log("Localidade Inicio = " + JSON.stringify(localidadeInicio)),
-                                    <option value={localidadeInicio.id}>{localidadeInicio.nome}</option>
-                                ))}
-
-                            </select>
-                        </div>
-
-                        <div className="col-md-6">
-                            <label>Localidade Fim</label>
-
-                            <select className="form-select" name="localidade_fim" id="localidade_fim" onChange={(e) => definirLocalidadeFim(e)}>
-                                <option value="">Selecione uma Localidade de Fim</option>
-                                {localidadeFimEventoList.map((localidadeFim) => (
-                                    //console.log("Localidade Inicio = " + JSON.stringify(localidadeFim)),
-                                        <option value={localidadeFim.id}>{localidadeFim.nome}</option>
-                                ))}
-                            </select>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
