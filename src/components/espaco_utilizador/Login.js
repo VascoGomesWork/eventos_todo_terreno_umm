@@ -23,7 +23,7 @@ export default function Login(){
 
     console.log("ID EVENTO LOGIN = " + useLocation().state)
     //Sets Evento ID to Be used
-    eventoId = useLocation().state
+    eventoId = global.eventoId;
 
     useEffect(() => {
         //Checks if User is already logged in

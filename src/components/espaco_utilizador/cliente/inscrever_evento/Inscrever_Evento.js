@@ -23,7 +23,7 @@ import Comentarios_Evento from "./Comentarios_Evento";
 export default function Inscrever_Evento(){
 
     console.log("INSCREVER EVENTO ID = " + useLocation().state)
-    var id = useLocation().state;
+    var id = global.eventoId;
 
     const [eventoAtributes, setEventosAtributes] = useState([])
     const [eventoId, setEventoId] = useState("")

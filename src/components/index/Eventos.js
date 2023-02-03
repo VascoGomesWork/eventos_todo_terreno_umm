@@ -21,7 +21,7 @@ export default function Eventos(){
         <div id="portfolio">
             <div class="container-fluid p-0">
                 
-                <h2 class="text-center mt-0">Eventos Todo-O-Terreno</h2>
+                <h2 class="text-center mt-0">Eventos Todo-o-Terreno</h2>
                     <hr class="divider" />
                 <h6 id="eventos_texto">Nesta secção podem ser visualizados os Eventos Todo-o-Terreno ativos</h6>
                 <div class="row g-0" id="eventos_row">
