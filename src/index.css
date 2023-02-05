@@ -11560,3 +11560,7 @@ body {font-family: Verdana, sans-serif;}
 #display{
   display: inline-block;
  }
+
+#asterisk{
+  color: red;
+}

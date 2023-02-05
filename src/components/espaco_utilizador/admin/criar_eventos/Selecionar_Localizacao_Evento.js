@@ -40,7 +40,7 @@ export default function Selecionar_Localizacao_Evento(){
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-location me-1"></i>
-                Selecione a Localização do Evento
+                Selecione a Localização do Evento <label><h2 id="asterisk">*</h2></label>
             </div>
             <div class="card-body">
                 <ol className="breadcrumb mb-4">

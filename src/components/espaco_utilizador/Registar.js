@@ -106,7 +106,7 @@ export default function Registar(){
                                                 </div>
                                                 <div
                                                     className="d-flex align-items-center justify-content-between ">
-                                                    <a className="btn btn-primary" onClick={registarParticipante}>Efetuar Registo</a>
+                                                    <a className="btn btn-primary" onSubmit={registarParticipante}>Efetuar Registo</a>
                                                 </div>
                                                 {badAlert && <Alert type="0" message="Dados de Login Incorretos"/>}
                                                 {alert && <Alert type="1" message="Registo Efetuado com Sucesso"/>}

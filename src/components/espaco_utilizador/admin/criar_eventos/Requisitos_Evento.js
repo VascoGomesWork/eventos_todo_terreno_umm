@@ -9,7 +9,7 @@ export default function Requisitos_Evento(){
         <div className="card mb-4">
             <div className="card-header">
                 <i className="fas fa-calendar me-1"></i>
-                Insira os Requisitos do Evento
+                Insira os Requisitos do Evento <label><h2 id="asterisk">*</h2></label>
             </div>
             <div className="card-body">
                 {/* Text Area -> https://getbootstrap.com/docs/4.0/components/forms/ */}

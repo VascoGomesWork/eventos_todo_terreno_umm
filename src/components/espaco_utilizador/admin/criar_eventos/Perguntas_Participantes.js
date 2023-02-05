@@ -17,9 +17,11 @@ export default function Perguntas_Participantes(){
         <div className="card mb-4">
             <div className="card-header">
                 <i className="fas fa-date me-1"></i>
-                Perguntas aos Participantes
+                Perguntas aos Participantes <label><h2 id="asterisk">*</h2></label>
             </div>
             <div className="card-body">
+
+                <h6>Estas perguntas são direcionadas ao participante quando este se for inscrever no evento, irá ter de responder às mesmas.</h6>
 
                 <label>Pergunta Relacionada com o Evento</label>
                 <input className="form-control" type="text" onChange={(e) => setPerguntaEvento1(e.target.value)}/>

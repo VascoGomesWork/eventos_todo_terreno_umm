@@ -17,7 +17,7 @@ export default function Comentarios_Evento(props){
                 <div class="card bg-light">
                     <div class="card-header">
                         <i class="fas fa-comment me-1"></i>
-                        Comentários do Evento
+                        Comentários do Evento <label><h2 id="asterisk">*</h2></label>
                     </div>
                     <div class="card-body">
                         <div className="d-flex mb-4">

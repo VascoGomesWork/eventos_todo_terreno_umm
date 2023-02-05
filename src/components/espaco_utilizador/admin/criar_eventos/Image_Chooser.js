@@ -9,7 +9,7 @@ export default function Image_Chooser(){
         <div className="card mb-4">
             <div className="card-header">
                 <i className="fas fa-location me-1"></i>
-                Selecione a Imagem do Evento
+                Selecione a Imagem do Evento <label><h2 id="asterisk">*</h2></label>
             </div>
             <div className="card-body">
                 <input className="form-control" type="file" id="formFile" onChange={(e) => setImage((e.target.value).substr(12))}/>

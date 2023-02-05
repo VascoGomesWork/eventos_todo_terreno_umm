@@ -147,7 +147,9 @@ export default function Inscrever_Evento(){
                         <div class="container-fluid px-4">
                             <h1 class="mt-4">Inscrição em Eventos</h1>
                             <ol class="breadcrumb mb-4">
-                                <li class="breadcrumb-item active">Esta secção é para ser realizada a inscrição nos eventos todo-o-terreno</li>
+                                <li class="breadcrumb-item active">Esta secção é para ser realizada a inscrição nos eventos todo-o-terreno.</li>
+
+                                <li><b>Todos</b> os campos assinalados com <label><h2 id="asterisk">*</h2></label> são de preenchimento obrigatório</li>
                             </ol>
 
                             <h3>Inscreva-se no Evento Preenchendo os Seguintes Campos</h3>
@@ -171,7 +173,7 @@ export default function Inscrever_Evento(){
                             <Comentarios_Evento comentariosEvento={comentariosEventoList} inscreverEvento={1}/>
 
                             <div id="criar_Evento">
-                                <button className="btn btn-primary" onClick={inscreverEvento}>Inscrever em Evento Todo-o-Terreno</button>
+                                <button className="btn btn-primary" onSubmit={inscreverEvento}>Inscrever em Evento Todo-o-Terreno</button>
                                 {alertFailed && <Alert type="0" message="Preencha Todos os Campos"/>}
                                 {alert && <Alert type="1" message="Inscreveu-se no Evento com Sucesso"/>}
                             </div>

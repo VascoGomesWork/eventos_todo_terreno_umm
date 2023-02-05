@@ -18,7 +18,7 @@ export default function Form_Participante(props){
         <div className="card mb-4">
             <div className="card-header">
                 <i className="fas fa-date me-1"></i>
-                Perguntas aos Participantes
+                Perguntas aos Participantes <label><h2 id="asterisk">*</h2></label>
             </div>
             <div className="card-body">
                 <div className="row">

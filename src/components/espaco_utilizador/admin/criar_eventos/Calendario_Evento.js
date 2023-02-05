@@ -27,7 +27,7 @@ export default function Calendario_Evento(){
         <div className="card mb-4">
             <div className="card-header">
                 <i className="fas fa-calendar me-1"></i>
-                Selecione a Data do Evento no Calendário
+                Selecione a Data do Evento no Calendário <label><h2 id="asterisk">*</h2></label>
             </div>
 
             <div className="card-body">

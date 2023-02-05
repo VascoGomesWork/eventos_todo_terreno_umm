@@ -113,7 +113,7 @@ export default function Login(){
                                                     <label for="inputPassword">Password</label>
                                                 </div>
                                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                    <Link class="btn btn-primary" state={useLocation().state} onClick={efetuarLogin}>Efetuar Login</Link>
+                                                    <Link class="btn btn-primary" state={useLocation().state} onSubmit={efetuarLogin}>Efetuar Login</Link>
                                                 </div>
                                                 {alert && <Alert type="0" message="Dados de Login Incorretos"/>}
                                             </form>

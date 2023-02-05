@@ -109,7 +109,8 @@ export default function Criar_Eventos(){
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Criação de Eventos Todo-o-Terreno UMM</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Para criar um evento todo-o-terreno, é necessário escolher a localização do evento no mapa, de seguida selecionar a data do evento no calendário, posteriormente enumerar os requisitos do mesmo e por último fazer uma breve descrição do evento, e criar o evento</li>
+                            <li class="breadcrumb-item active">Para criar um evento todo-o-terreno, é necessário escolher a localização do evento no mapa, de seguida selecionar a data do evento no calendário, posteriormente enumerar os requisitos do mesmo e por último fazer uma breve descrição do evento, e criar o evento.</li>
+                            <li><b>Todos</b> os campos assinalados com <label><h2 id="asterisk">*</h2></label> são de preenchimento obrigatório</li>
                         </ol>
 
                         <Nome_Evento/>
@@ -127,7 +128,7 @@ export default function Criar_Eventos(){
                         <Perguntas_Participantes />
 
                         <div id="criar_Evento">
-                            <button className="btn btn-primary" onClick={criarEvento}>Criar Evento Todo-o-Terreno</button>
+                            <button className="btn btn-primary" onSubmit={criarEvento}>Criar Evento Todo-o-Terreno</button>
                             {alertFailed && <Alert type="0" message="Preencha Todos os Campos"/>}
                             {alert && <Alert type="1" message="Evento Criado com Sucesso"/>}
                         </div>
