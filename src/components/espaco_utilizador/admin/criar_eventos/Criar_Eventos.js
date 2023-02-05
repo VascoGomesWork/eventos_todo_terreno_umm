@@ -128,7 +128,7 @@ export default function Criar_Eventos(){
                         <Perguntas_Participantes />
 
                         <div id="criar_Evento">
-                            <button className="btn btn-primary" onSubmit={criarEvento}>Criar Evento Todo-o-Terreno</button>
+                            <button className="btn btn-primary" onClick={criarEvento}>Criar Evento Todo-o-Terreno</button>
                             {alertFailed && <Alert type="0" message="Preencha Todos os Campos"/>}
                             {alert && <Alert type="1" message="Evento Criado com Sucesso"/>}
                         </div>
